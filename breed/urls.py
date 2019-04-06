@@ -62,11 +62,6 @@ if settings.DEBUG:
                 {'document_root': settings.MEDIA_ROOT})
         ]
     
-    import debug_toolbar
-    urlpatterns += [
-        url(r'^__debug__/', include(debug_toolbar.urls)),
-    ]
-
     # Hardcoded only for development server
     urlpatterns += staticfiles_urlpatterns(prefix="/static/")
     urlpatterns += mediafiles_urlpatterns(prefix="/media/")

@@ -16,8 +16,8 @@ ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
 APPEND_SLASH = True
 
 INSTALLED_APPS = [
-    "django.contrib.auth",
     "django.contrib.contenttypes",
+    "django.contrib.auth",
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.admin",
