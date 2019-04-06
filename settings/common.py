@@ -1,0 +1,188 @@
+# -*- coding: utf-8 -*-
+import sys, os
+from decouple import config, Csv
+from django.utils.translation import ugettext_lazy as _
+
+BASE_DIR = os.path.dirname(os.path.dirname(__file__))
+
+# SECURITY WARNING: keep the secret key used in production secret!
+SECRET_KEY = config('SECRET_KEY')
+
+# SECURITY WARNING: don't run with debug turned on in production!
+DEBUG = config('DEBUG', default=False, cast=bool)
+
+ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
+
+APPEND_SLASH = True
+
+INSTALLED_APPS = [
+    "django.contrib.auth",
+    "django.contrib.contenttypes",
+    "django.contrib.sessions",
+    "django.contrib.messages",
+    "django.contrib.admin",
+    "django.contrib.staticfiles",
+    "django.contrib.sitemaps",
+    'django.contrib.gis',
+    'django.contrib.humanize',
+
+    "easy_thumbnails",
+    'channels',
+
+    'breed.activities',
+    'breed.authentication',
+    'breed.core',
+    'breed.breeds',
+    'breed.messenger',
+    'breed.questions',
+    'breed.search',
+    'location_field.apps.DefaultConfig',
+]
+
+MIDDLEWARE = [
+
+    # Common middlewares
+    'django.middleware.security.SecurityMiddleware',
+    "django.middleware.common.CommonMiddleware",
+    "django.middleware.locale.LocaleMiddleware",
+
+    # Only needed by django admin
+    'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.csrf.CsrfViewMiddleware',
+    'django.contrib.auth.middleware.AuthenticationMiddleware',
+    'django.contrib.messages.middleware.MessageMiddleware',
+    'django.middleware.clickjacking.XFrameOptionsMiddleware',
+
+]
+
+ROOT_URLCONF = "breed.urls"
+
+TEMPLATES = [
+    {
+        "BACKEND": "django.template.backends.django.DjangoTemplates",
+        "DIRS": [
+            os.path.join(BASE_DIR, "templates"),
+        ],
+        "APP_DIRS": True,
+        "OPTIONS": {
+            'context_processors': [
+                "django.contrib.auth.context_processors.auth",
+                "django.template.context_processors.request",
+                "django.template.context_processors.i18n",
+                "django.template.context_processors.media",
+                "django.template.context_processors.static",
+                "django.template.context_processors.tz",
+                "django.contrib.messages.context_processors.messages",
+            ],
+        }
+    },
+]
+
+WSGI_APPLICATION = 'settings.wsgi.application'
+ASGI_APPLICATION = 'settings.routing.application'
+
+EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
+
+DATABASES = {
+    "default": {
+        'ENGINE': 'django.contrib.gis.db.backends.postgis',
+        "NAME": "breed",
+    },
+}
+
+
+AUTH_PASSWORD_VALIDATORS = [
+    {
+        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
+    },
+    {
+        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
+    },
+    {
+        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
+    },
+    {
+        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
+    },
+]
+
+# Internationalization
+# https://docs.djangoproject.com/en/1.11/topics/i18n/
+
+LANGUAGE_CODE = 'en-us'
+
+TIME_ZONE = 'Africa/Nairobi'
+
+USE_I18N = True
+
+USE_L10N = True
+
+USE_TZ = True
+
+# Static files (CSS, JavaScript, Images)
+# https://docs.djangoproject.com/en/1.11/howto/static-files/
+
+MEDIA_URL = "/media/"
+STATIC_URL = "/static/"
+MEDIA_ROOT = os.path.join(BASE_DIR, "media")
+# STATIC_ROOT = os.path.join(BASE_DIR, "static")
+
+STATICFILES_DIRS = (
+   os.path.join(BASE_DIR, "static"),
+)
+
+# Default configuration for reverse proxy
+USE_X_FORWARDED_HOST = True
+SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTOCOL", "https")
+
+
+THN_LOGO_VERY_SMALL_SIZE = 40       # 40x40 pixels
+THN_AVATAR_SIZE = 80                # 80x80 pixels
+THN_AVATAR_BIG_SIZE = 300           # 300x300 pixels
+THN_LOGO_SMALL_SIZE = 80            # 80x80 pixels
+THN_LOGO_BIG_SIZE = 300             # 300x300 pixels
+THN_TIMELINE_IMAGE_SIZE = 640       # 640x??? pixels
+THN_CARD_IMAGE_WIDTH = 300          # 300 pixels
+THN_CARD_IMAGE_HEIGHT = 200         # 200 pixels
+THN_PREVIEW_IMAGE_WIDTH = 800       # 800 pixels
+
+THN_LOGO_VERY_SMALL = "logo--very-small"
+THN_AVATAR_SMALL = "avatar"
+THN_AVATAR_BIG = "big-avatar"
+THN_LOGO_SMALL = "logo-small"
+THN_LOGO_BIG = "logo-big"
+THN_ATTACHMENT_TIMELINE = "timeline-image"
+THN_ATTACHMENT_CARD = "card-image"
+THN_ATTACHMENT_PREVIEW = "preview-image"
+
+THUMBNAIL_ALIASES = {
+    "": {
+        THN_LOGO_VERY_SMALL: {"size": (THN_LOGO_VERY_SMALL_SIZE, THN_LOGO_VERY_SMALL_SIZE), "crop": True},
+        THN_AVATAR_SMALL: {"size": (THN_AVATAR_SIZE, THN_AVATAR_SIZE), "crop": True},
+        THN_AVATAR_BIG: {"size": (THN_AVATAR_BIG_SIZE, THN_AVATAR_BIG_SIZE), "crop": True},
+        THN_LOGO_SMALL: {"size": (THN_LOGO_SMALL_SIZE, THN_LOGO_SMALL_SIZE), "crop": True},
+        THN_LOGO_BIG: {"size": (THN_LOGO_BIG_SIZE, THN_LOGO_BIG_SIZE), "crop": True},
+        THN_ATTACHMENT_TIMELINE: {"size": (THN_TIMELINE_IMAGE_SIZE, 0), "crop": True},
+        THN_ATTACHMENT_CARD: {"size": (THN_CARD_IMAGE_WIDTH, THN_CARD_IMAGE_HEIGHT), "crop": True},
+        THN_ATTACHMENT_PREVIEW: {"size": (THN_PREVIEW_IMAGE_WIDTH, 0), "crop": False},
+    },
+}
+
+
+LOGIN_URL = '/'
+LOGIN_REDIRECT_URL = '/breeds/'
+
+ALLOWED_SIGNUP_DOMAINS = ['*']
+
+FILE_UPLOAD_TEMP_DIR = '/tmp/'
+FILE_UPLOAD_PERMISSIONS = 0o644
+
+
+# NOTE: DON'T INSERT MORE SETTINGS AFTER THIS LINE
+TEST_RUNNER="django.test.runner.DiscoverRunner"
+
+
+if "test" in sys.argv:
+    print ("\033[1;91mNo django tests.\033[0m")
+    print ("Try: \033[1;33mpy.test\033[0m")
+    sys.exit(0)

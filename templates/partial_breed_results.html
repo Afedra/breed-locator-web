@@ -1,0 +1,24 @@
+{% load i18n %}
+{% load humanize %}
+
+<h2>{% trans 'Breed' %}</h2>
+{% if results %}
+  <ul class="breed-results">
+    {% for breed in results %}
+      <li breed-id="{{ breed.pk }}">
+        <a href="{% url 'profile' breed.user.username %}">
+          <img src="{{ breed.user.profile.get_picture }}" class="pull-left">
+        </a>
+        <div class="breed">
+          <h3>
+            <a href="{% url 'profile' breed.user.username %}">{{ breed.user.profile.get_screen_name }}</a>
+            <small>{{ breed.date|naturaltime }}</small>
+          </h3>
+          <p>{{ breed.linkfy_breed|safe }}</p>
+        </div>
+      </li>
+    {% endfor %}
+  </ul>
+{% else %}
+  <h4 class="no-result">{% trans 'No breed found' %} :(</h4>
+{% endif %}

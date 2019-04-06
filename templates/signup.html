@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% load staticfiles i18n %}
+
+{% block body %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-4 col-md-offset-4">
+            <div class="login-panel panel panel-default">
+                <div class="panel-heading">
+                    {% if form.non_field_errors %}
+                      {% for error in form.non_field_errors %}
+                        <div class="alert alert-danger alert-dismissable">
+                          <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                          {{ error }}
+                        </div>
+                      {% endfor %}
+                    {% endif %}
+                    <h3 class="panel-title">Create An Account</h3>
+                </div>
+                <div class="panel-body">
+                    <form action="{% url 'signup' %}" method="post" role="form">
+                        {% csrf_token %}
+                        <fieldset>
+                            {% for field in form.visible_fields %}
+                              <div class="form-group{% if field.errors %} has-error{% endif %}">
+                                <label for="{{ field.label }}">{{ field.label }}</label>
+                                {{ field }}
+                                {% if field.help_text %}
+                                  <span class="help-block">{{ field.help_text|safe }}</span>
+                                {% endif %}
+                                {% for error in field.errors %}
+                                  <label class="control-label">{{ error }}</label>
+                                {% endfor %}
+                              </div>
+                            {% endfor %}
+                            <div class="form-group">
+                              <button type="submit" class="btn btn-primary btn-block">{% trans 'Create an account' %}</button>
+                              <a href="{% url 'login' %}" class="btn btn-link">{% trans 'I have an account! Log in' %}</a>
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock body %}

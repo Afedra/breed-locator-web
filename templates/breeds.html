@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% load i18n %}
+
+{% block head %}
+  <link href="{% static 'css/breeds.css' %}?v=1" rel="stylesheet">
+	<link href="{% static 'css/jquery.filer.css' %}" type="text/css" rel="stylesheet" />
+	<link href="{% static 'css/themes/jquery.filer-dragdropbox-theme.css' %}" type="text/css" rel="stylesheet" />
+	<script type="text/javascript" src="{% static 'js/jquery.filer.min.js' %}"></script>
+  <script src="{% static 'js/jquery.bullseye-1.0-min.js' %}"></script>
+  <script src="{% static 'js/breeds.js' %}?v=1"></script>
+
+{% endblock head %}
+
+{% block main %}
+
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2">
+
+      <div class="panel panel-default panel-breed">
+        <div class="panel-heading">
+          <h3 class="panel-title">{% trans 'Add Breed' %}</h3>
+        </div>
+        <div class="panel-body">
+
+          <div class="compose">
+
+            <form enctype="multipart/form-data" action="" method="post" role="form" id="compose-form">
+              {% csrf_token %}
+              <div class="form-group" style="padding: 50px;">
+                  <input type="file" name="picture" id="input" required>
+              </div>
+              <div class="form-group">
+                <label>Sex</label>
+                <select class="form-control" name="sex">
+                  <option>Male</option>
+                  <option>Female</option>
+                </select>              
+              </div>
+              <div class="form-group">
+                <label>Description</label>
+                <textarea class="form-control" rows="3" name="description" required></textarea>
+                <span class="help-block help-count pull-right">255</span>
+              </div>
+              <div class="form-group">
+                <button type="submit" class="btn btn-primary btn-breed btn-block">
+                  <span class="glyphicon glyphicon-send"></span> {% trans 'Add Breed' %}
+                </button>
+              </div>
+            </form>
+          </div>
+
+        </div>
+      </div>      
+    </div>
+  </div>
+
+
+
+{% endblock main %}
