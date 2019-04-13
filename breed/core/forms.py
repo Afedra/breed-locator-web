@@ -2,6 +2,7 @@ from django import forms
 from django.contrib.auth.models import User
 from geoposition.fields import GeopositionField
 from breed.authentication.models import Profile
+from breed.authentication.models import JOB_TITLE
 class ProfileForm(forms.ModelForm):
 
     first_name = forms.CharField(
@@ -16,6 +17,11 @@ class ProfileForm(forms.ModelForm):
         widget=forms.TextInput(attrs={'class': 'form-control'}),
         max_length=75,
         required=False)
+    job_title = forms.ChoiceField(
+        widget=forms.Select(attrs={'class': 'form-control'}),
+        choices=JOB_TITLE,
+        label="User Type",
+        required=True)  
 
     class Meta:
         model = Profile
