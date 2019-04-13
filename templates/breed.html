@@ -26,7 +26,7 @@
   <ul class="stream">
     {% for breeds in breed.get_match_breed %}
       <li breed-id="{{ breeds.pk }}" current-breed-id="{{ breed.pk }}" csrf="{{ csrf_token }}">
-        <div class="breed-container">
+        <div class="row breed-container">
           <a href="{% url 'profile' breeds.user.username %}"><img src="{{ breeds.user.profile.get_picture }}" class="user"></a>
           <div class="breed">
             {% if breeds.user == user %}
@@ -34,10 +34,10 @@
             {% endif %}
             <h3><a href="{% url 'profile' breeds.user.username %}">{{ breeds.user.profile.get_screen_name }}</a> <small>{{ breeds.date|naturaltime }}</small></h3>
             <p>{{ breeds.sex }} {{ breeds.linkfy_breed|safe }}</p>
-            <div class="col-md-6">
+            <div class="col m6">
               <p><img src="{{ breeds.photo.url }}" style="max-height:350px;width:100%;"></p>    
             </div>
-            <div class="col-md-6">
+            <div class="col m6">
               <iframe
                 width="100%"
                 height="200"

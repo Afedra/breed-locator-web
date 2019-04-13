@@ -16,7 +16,7 @@
 {% block main %}
 
   <div class="row">
-    <div class="col-md-8 col-md-offset-2">
+    <div class="col s12 m8 offset-m2">
 
       <div class="panel panel-default panel-breed">
         <div class="panel-heading">
@@ -40,11 +40,11 @@
               </div>
               <div class="form-group">
                 <label>Description</label>
-                <textarea class="form-control" rows="3" name="description" required></textarea>
+                <textarea class="materialize-textarea" rows="3" name="description" required></textarea>
                 <span class="help-block help-count pull-right">255</span>
               </div>
               <div class="form-group">
-                <button type="submit" class="btn btn-primary btn-breed btn-block">
+                <button type="submit" class="btn waves-effect waves-light col s12">
                   <span class="glyphicon glyphicon-send"></span> {% trans 'Add Breed' %}
                 </button>
               </div>

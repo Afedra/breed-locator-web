@@ -13,10 +13,10 @@
 {% block main %}
   <div class="page-header">
     <div class="row">
-      <div class="col-md-3">
+      <div class="col m3">
         <h1>{% trans 'Search' %}</h1>
       </div>
-      <div class="col-md-9">
+      <div class="col m9">
         <form role="search" action="{% url 'search' %}">
           <input type="hidden" name="type" value="{{ active }}">
           <div class="input-group">
@@ -30,10 +30,10 @@
     </div>
   </div>
   <div class="row results">
-    <div class="col-md-3">
+    <div class="col m3">
       {% include 'partial_results_menu.html' with active=active count=count querystring=querystring %}
     </div>
-    <div class="col-md-9">
+    <div class="col m9">
       {% if active == 'breed' %}
         {% include 'partial_breed_results.html' with results=results %}
       {% elif active == 'questions' %}

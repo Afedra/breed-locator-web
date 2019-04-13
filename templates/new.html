@@ -10,19 +10,19 @@
   <form class="form-horizontal" role="form" method="post">
     {% csrf_token %}
     <div class="form-group">
-      <label for="to" class="col-sm-1 control-label">To</label>
-      <div class="col-sm-11">
+      <label for="to" class="col s1 control-label">To</label>
+      <div class="col s11">
         <input class="form-control typeahead" type="text" id="to" name="to">
       </div>
     </div>
     <div class="form-group">
-      <label for="to" class="col-sm-1 control-label">Message</label>
-      <div class="col-sm-11">
-        <textarea class="form-control" id="message" name="message" placeholder="Write a message" rows="4"></textarea>
+      <label for="to" class="col s1 control-label">Message</label>
+      <div class="col s11">
+        <textarea class="materialize-textarea" id="message" name="message" placeholder="Write a message" rows="4"></textarea>
       </div>
     </div>
     <div class="form-group">
-      <div class="col-sm-11 col-sm-offset-1">
+      <div class="col s11 col offset-s1">
         <button type="submit" class="btn btn-primary">Send</button>
       </div>
     </div>

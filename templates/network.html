@@ -16,7 +16,7 @@
 
     <div class="row">
       {% for user in users %}
-        <div class="col-md-4">
+        <div class="col m4">
           <div class="panel panel-default">
             <div class="panel-heading">
               <img src="{{ user.profile.get_picture }}" style="width:20px">
@@ -38,7 +38,7 @@
     </div>
 
     <div class="row">
-      <div class="col-md-12">
+      <div class="col m12">
         {% include 'paginator.html' with paginator=users %}
       </div>
     </div>

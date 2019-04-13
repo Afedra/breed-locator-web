@@ -10,10 +10,10 @@
         <div class="breed">
           <h3><a href="{% url 'profile' breed.user.username %}">{{ breed.user.profile.get_screen_name }}</a> <small>{{ breed.date|naturaltime }}</small></h3>
           <p>{{ breed.sex }} {{ breed.linkfy_breed|safe }}</p>
-          <div class="col-md-6">
+          <div class="col m6">
             <p><img src="{{ breed.photo.url }}" style="max-height:350px;width:100%;"></p>    
           </div>
-          <div class="col-md-6">
+          <div class="col m6">
             <iframe
               width="100%"
               height="200"

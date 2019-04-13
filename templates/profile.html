@@ -17,7 +17,7 @@
   </div>
   <div class="profile">
     <div class="row">
-      <div class="col-md-3 user-profile">
+      <div class="col m3 user-profile">
         <img src="{{ page_user.profile.get_picture }}" class="picture">
         <ul>
           {% if page_user.profile.job_title %}
@@ -28,7 +28,7 @@
           {% endif %}
         </ul>
       </div>
-      <div class="col-md-9">
+      <div class="col m9">
         <h4>{% trans 'Last Breed by' %} {{ page_user.profile.get_screen_name }}</h4>
         <div class="stream-update">
           <a href="#"><span class="new-breeds"></span> new breeds</a>

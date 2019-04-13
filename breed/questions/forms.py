@@ -8,7 +8,7 @@ class QuestionForm(forms.ModelForm):
         widget=forms.TextInput(attrs={'class': 'form-control'}),
         max_length=255)
     description = forms.CharField(
-        widget=forms.Textarea(attrs={'class': 'form-control'}),
+        widget=forms.Textarea(attrs={'class': 'materialize-textarea'}),
         max_length=2000)
     tags = forms.CharField(
         widget=forms.TextInput(attrs={'class': 'form-control'}),
@@ -25,7 +25,7 @@ class AnswerForm(forms.ModelForm):
     question = forms.ModelChoiceField(widget=forms.HiddenInput(),
                                       queryset=Question.objects.all())
     description = forms.CharField(
-        widget=forms.Textarea(attrs={'class': 'form-control', 'rows': '4'}),
+        widget=forms.Textarea(attrs={'class': 'materialize-textarea', 'rows': '4'}),
         max_length=2000)
 
     class Meta:

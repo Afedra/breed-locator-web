@@ -70,14 +70,14 @@ $(function () {
       success: function (data) {
         if ($(".match", li).hasClass("unmatch")) {
           $(".match", li).removeClass("unmatch");
-          $(".match", li).removeClass("btn-danger");
+          $(".match", li).removeClass("red");
           $(".match", li).addClass("btn-success");
           $(".match .text", li).text("Match");
         }
         else {
           $(".match", li).addClass("unmatch");
           $(".match", li).removeClass("btn-success");
-          $(".match", li).addClass("btn-danger");
+          $(".match", li).addClass("red");
           $(".match .text", li).text("Unmatch");
         }
         $(".match .match-count", li).text(data);

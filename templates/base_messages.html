@@ -13,10 +13,10 @@
     <h1>{% block page_header %}{% endblock %}</h1>
   </div>
   <div class="row" style="margin-top: 1em">
-    <div class="col-md-3">
+    <div class="col m3">
       {% include 'partial_conversations.html' with conversations=conversations active=active %}
     </div>
-    <div class="col-md-9">
+    <div class="col m9">
       {% block container %}
       {% endblock container %}
     </div>

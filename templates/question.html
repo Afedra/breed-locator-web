@@ -10,13 +10,22 @@
 {% endblock head %}
 
 {% block main %}
-  <ol class="breadcrumb" style="background-color:#fff;">
-    <li><a href="{% url 'questions' %}">{% trans "Questions" %}</a></li>
-    <li class="active">{% trans "Question" %}</li>
-  </ol>
+<div id="breadcrumbs-wrapper">
+  <div class="container">
+    <div class="row">
+      <div class="col s10 m6 l6">
+        <ol class="breadcrumbs">
+          <li><a href="{% url 'questions' %}">{% trans 'Questions' %}</a></li>
+          <li class="active">{% trans "Question" %}</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</div>
+
   <div class="row question" question-id="{{ question.id }}">
     {% csrf_token %}
-    <div class="col-md-1 options">
+    <div class="col m1 options">
       {% if user in question.get_favoriters %}
         <span class="glyphicon glyphicon-star favorite favorited" title="Click to mark this question as favorite; click again to toggle"></span>
       {% else %}
@@ -24,7 +33,7 @@
       {% endif %}
       <span class="favorite-count">{{ question.favorites }}</span>
     </div>
-    <div class="col-md-11">
+    <div class="col m11">
       <h2>{{ question.title }}</h2>
       <div class="question-user">
         <a href="{% url 'profile' question.user.username %}"><img src="{{ question.user.profile.get_picture }}" class="user"></a>

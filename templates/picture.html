@@ -15,10 +15,10 @@
     <h1>{% trans 'Account Settings' %}</h1>
   </div>
   <div class="row" style="margin-top: 2em">
-    <div class="col-md-3">
+    <div class="col m3">
       {% include 'partial_settings_menu.html' with active='picture' %}
     </div>
-    <div class="col-md-9">
+    <div class="col m9">
       {% if messages %}
         {% for message in messages %}
           <div class="alert alert-success alert-dismissable">

@@ -2,18 +2,18 @@
   {% if paginator.has_previous %}
     <li><a href="?page={{ paginator.previous_page_number }}">&laquo;</a></li>
   {% else %}
-    <li class="disabled"><span>&laquo;</span></li>
+    <li class="disabled"><a href="#!"><i class="mdi-navigation-chevron-left"></i></a></li>
   {% endif %}
   {% for i in paginator.paginator.page_range %}
     {% if paginator.number == i %}
-      <li class="active"><span>{{ i }} <span class="sr-only">(current)</span></span></li>
+      <li class="waves-effect active"><span>{{ i }} <span class="sr-only">(current)</span></span></li>
     {% else %}
-      <li><a href="?page={{ i }}">{{ i }}</a></li>
+      <li class="waves-effect"><a href="?page={{ i }}">{{ i }}</a></li>
     {% endif %}
   {% endfor %}
   {% if paginator.has_next %}
     <li><a href="?page={{ paginator.next_page_number }}">&raquo;</a></li>
   {% else %}
-    <li class="disabled"><span>&raquo;</span></li>
+    <li class="waves-effect"><a href="#!"><i class="mdi-navigation-chevron-right"></i></a></li>
   {% endif %}
 </ul>

@@ -3,7 +3,7 @@
 
 <div class="row answer" answer-id="{{ answer.id }}">
   {% csrf_token %}
-  <div class="col-md-1 options">
+  <div class="col m1 options">
     <span class="glyphicon glyphicon-chevron-up vote up-vote{% if user in answer.get_up_voters %} voted{% endif %}" title="{% trans 'Click to up vote; click again to toggle' %}"></span>
     <span class="votes">{{ answer.votes }}</span>
     <span class="glyphicon glyphicon-chevron-down vote down-vote{% if user in answer.get_down_voters %} voted{% endif %}" title="{% trans 'Click to down vote; click again to toggle' %}"></span>
@@ -15,7 +15,7 @@
       <span class="glyphicon glyphicon-ok accept" title="{% trans 'Click to accept the answer' %}"></span>
     {% endif %}
   </div>
-  <div class="col-md-11">
+  <div class="col m11">
     <div class="answer-user">
       <a href="{% url 'profile' answer.user.username %}"><img src="{{ answer.user.profile.get_picture }}" class="user"></a>
       <a href="{% url 'profile' answer.user.username %}" class="username">{{ answer.user.profile.get_screen_name }}</a>
