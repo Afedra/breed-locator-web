@@ -49,25 +49,33 @@ def statistics(request):
 
 def find(request, pk):
     breed = get_object_or_404(Breed, pk=pk)
-    return render(request, 'breed.html', {'breed': breed})
+    if breed.sex == "Male":
+        sex = "Female"
+    else:
+        sex = "Male"
+    breeds = Breed.objects.filter(sex=sex, breed_type=breed.breed_type).exclude(pk=breed.pk)
+    return render(request, 'find.html', {'breeds': breeds, "currentbreed": breed})
 
 @login_required
 @ajax_required
 def match(request):
     breed_id = request.POST['breed']
+    currentbreed_id = request.POST['currentbreed']
     breed = Breed.objects.get(pk=breed_id)
     user = request.user
     match = Activity.objects.filter(activity_type=Activity.MATCH, breed=breed_id,
-                                   user=user)
+                                   user=user, currentbreed=currentbreed_id)
     if match:
         user.profile.unotify_matched(breed)
         match.delete()
 
     else:
-        match = Activity(activity_type=Activity.MATCH, breed=breed_id, user=user)
+        match = Activity(activity_type=Activity.MATCH, breed=breed_id, currentbreed=currentbreed_id, user=user)
         match.save()
         user.profile.notify_matched(breed)
 
+    currentbreed_id = request.POST['currentbreed']
+    Breed.objects.get(pk=currentbreed_id).calculate_matches()
     return HttpResponse(breed.calculate_matches())
 
 @login_required
@@ -108,22 +116,6 @@ def _html_breeds(last_breed, user, csrf_token, breed_source='all'):
     for breed in breeds:
         html = '{0}{1}'.format(html,
                                render_to_string('partial_breed.html',
-                                                {
-                                                    'breed': breed,
-                                                    'user': user,
-                                                    'csrf_token': csrf_token
-                                                    }))
-
-    return html
-
-def _html_breeds_home(last_breed, user, csrf_token, breed_source='all'):
-    breeds = Breed.get_breeds_after(last_breed)
-    if breed_source != 'all':
-        breeds = breeds.filter(user__id=breed_source)
-    html = ''
-    for breed in breeds:
-        html = '{0}{1}'.format(html,
-                               render_to_string('partial_breed_home.html',
                                                 {
                                                     'breed': breed,
                                                     'user': user,

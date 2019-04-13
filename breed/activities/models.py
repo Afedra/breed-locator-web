@@ -21,6 +21,7 @@ class Activity(models.Model):
     activity_type = models.CharField(max_length=1, choices=ACTIVITY_TYPES)
     date = models.DateTimeField(auto_now_add=True)
     breed = models.IntegerField(null=True, blank=True)
+    currentbreed = models.IntegerField(null=True, blank=True)
     question = models.IntegerField(null=True, blank=True)
     answer = models.IntegerField(null=True, blank=True)
 

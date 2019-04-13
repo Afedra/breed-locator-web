@@ -23,9 +23,6 @@
           {% if page_user.profile.job_title %}
           <li><span class="glyphicon glyphicon-briefcase"></span> {{ page_user.profile.job_title }}</li>
           {% endif %}
-          {% if page_user.profile.location %}
-          <li><span class="glyphicon glyphicon-map-marker"></span> {{ page_user.profile.location }}</li>
-          {% endif %}
           {% if page_user.profile.url %}
           <li><span class="glyphicon glyphicon-globe"></span> <a href="{{ page_user.profile.get_url }}" target="_blank">{{ page_user.profile.get_url }}</a></li>
           {% endif %}

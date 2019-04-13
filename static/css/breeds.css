@@ -20,8 +20,6 @@ ul.stream li a img.user {
 }
 
 ul.stream li div.breed {
-  margin-left: 60px;
-  padding: 0 0 0 1.2em;
   overflow-x: auto;
 }
 
@@ -158,9 +156,4 @@ ul.stream li div.breed div.interaction a {
 
 .panel-breed .panel-body {
   padding: 0;
-}
-
-.breed-container {
-  padding-left: 15px;
-  padding-right: 15px;
 }

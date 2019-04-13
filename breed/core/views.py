@@ -62,6 +62,7 @@ def settings(request):
             user.last_name = form.cleaned_data.get('last_name')
             user.profile.job_title = form.cleaned_data.get('job_title')
             user.email = form.cleaned_data.get('email')
+            print(form.cleaned_data.get('location'))
             user.profile.location = form.cleaned_data.get('location')
             user.save()
             messages.add_message(request,

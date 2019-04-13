@@ -19,4 +19,52 @@
   <ul class="stream">
     {% include 'partial_breed.html' with breed=breed %}
   </ul>
+
+  <div class="page-header">
+    <h1>Matches Made by Owner</h1>
+  </div>
+  <ul class="stream">
+    {% for breeds in breed.get_match_breed %}
+      <li breed-id="{{ breeds.pk }}" current-breed-id="{{ breed.pk }}" csrf="{{ csrf_token }}">
+        <div class="breed-container">
+          <a href="{% url 'profile' breeds.user.username %}"><img src="{{ breeds.user.profile.get_picture }}" class="user"></a>
+          <div class="breed">
+            {% if breeds.user == user %}
+              <span class="glyphicon glyphicon-remove remove-breed" title="{% trans 'Click to remove this breed' %}"></span>
+            {% endif %}
+            <h3><a href="{% url 'profile' breeds.user.username %}">{{ breeds.user.profile.get_screen_name }}</a> <small>{{ breeds.date|naturaltime }}</small></h3>
+            <p>{{ breeds.sex }} {{ breeds.linkfy_breed|safe }}</p>
+            <div class="col-md-6">
+              <p><img src="{{ breeds.photo.url }}" style="max-height:350px;width:100%;"></p>    
+            </div>
+            <div class="col-md-6">
+              <iframe
+                width="100%"
+                height="200"
+                frameborder="0" style="border:0"
+                src = "https://maps.google.com/maps?q={{ breeds.user.profile.get_location }}&hl=es;z=19&amp;output=embed">
+              </iframe>
+            </div>
+            <div class="interaction">
+              {% if breed.user == request.user %}              
+              {% if breeds.pk in breed.get_match %}
+                <a href="#" class="btn btn-danger match unmatch">
+                  <span class="text">{% trans 'Unmatch' %}</span>
+                </a>
+              {% else %}
+                <a href="#" class="btn btn-success match">
+                  <span class="text">{% trans 'Match' %}</span>
+                </a>
+              {% endif %}
+              {% endif %}
+              <a href="{% url 'breed' breeds.id %}" class="pull-right">
+                <span class="text">View</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </li>
+  {% endfor %}
+  </ul>
+
 {% endblock main %}

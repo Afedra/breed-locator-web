@@ -27,9 +27,6 @@
                 <p><strong>{% trans 'Job Title' %}:</strong> {{ user.profile.job_title }}</p>
               {% endif %}
               <p><strong>{% trans 'Username' %}: </strong> {{ user.username }}</p>
-              {% if user.profile.location %}
-                <p><strong>{% trans 'Location' %}:</strong> {{ user.profile.location }}</p>
-              {% endif %}
               {% if user.profile.url %}
                 <p><strong>{% trans 'Url' %}:</strong> {{ user.profile.get_url }}</p>
               {% endif %}

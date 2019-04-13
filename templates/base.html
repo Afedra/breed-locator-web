@@ -34,7 +34,7 @@
             </div>
             <!-- /.navbar-header -->
 
-            <ul class="nav navbar-top-links navbar-right">
+            <ul class="visible-md visible-lg nav navbar-top-links navbar-right">
                 <li>
                   <a href="{% url 'profile' user.username %}">{{ user.profile.get_screen_name }}</a>
                 </li>
@@ -67,7 +67,7 @@
                         <li><a href="{% url 'add' %}"><span class="fa fa-plus"></span> {% trans 'Add Breed' %}</a></li>
                         <li><a href="{% url 'profile' user.username %}"><span class="fa fa-rss"></span> {% trans 'Your Breeds' %}</a></li>
                         <li><a href="{% url 'inbox' %}"><span class="fa fa-envelope"></span> <span class="badge pull-right" id="unread-count">0</span>{% trans 'Chat' %}</a></li>
-                        <li><a href="{% url 'statistics' %}"><span class="fa fa-bar-chart-o "></span> {% trans 'Statistics' %}</a></li>
+                        {% comment %} <li><a href="{% url 'statistics' %}"><span class="fa fa-bar-chart-o "></span> {% trans 'Statistics' %}</a></li> {% endcomment %}
                         <li><a href="{% url 'questions' %}"><span class="fa fa-bullhorn"></span> {% trans 'Ask A Doctor' %}</a></li>
                         <li><a href="{% url 'network' %}"><span class="fa fa-group"></span> {% trans 'Network' %}</a></li>
                         <li><a href="{% url 'notifications' %}"><span class="fa fa-bell"></span>  {% trans 'Notifications' %}</a></li>
@@ -97,6 +97,7 @@
       </div>
     {% endblock body %}
 
+    {% block script %}{% endblock %}
     <script src="{% static 'js/ga.js' %}"></script>
   </body>
 </html>

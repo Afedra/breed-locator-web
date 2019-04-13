@@ -1,12 +1,15 @@
 from __future__ import unicode_literals
 
 from django.contrib.auth.models import User
-from django.db import models
+from django.contrib.gis.db import models
 from django.utils.html import escape
 from django.utils.translation import ugettext_lazy as _
 
 import bleach
 from breed.activities.models import Activity
+from django.contrib.gis.geos import Point
+from geoposition.fields import GeopositionField
+from django.db.models import deletion
 
 FEMALE = 'FEMALE'
 MALE = 'MALE'
@@ -14,16 +17,29 @@ BREED_SEX = (
     (MALE, 'Male'),
     (FEMALE, 'Female'),
     )
+UNKNOWN = "UNKNOWN"
+ANKOLE = "ANKOLE"
+FRESIAN = "FRESIAN"
+JERSEY = "JERSEY"
+ZEBU = "ZEBU"
+BREED_TYPE = (
+    (ANKOLE, 'Ankole'),
+    (JERSEY, 'Jersey'),
+    (ZEBU, 'Zebu'),
+    (FRESIAN, 'Fresian'),
+    (UNKNOWN, 'Unknown'),
+    )
+
 
 class Breed(models.Model):
-    user = models.ForeignKey(User, on_delete=models.deletion.CASCADE)
+    user = models.ForeignKey(User, on_delete=deletion.CASCADE)
     date = models.DateTimeField(auto_now_add=True)
+    breed_type = models.CharField(max_length=50, choices=BREED_TYPE,default=UNKNOWN)
     breed = models.TextField(max_length=255)
-    parent = models.ForeignKey('Breed', null=True, related_name="+", blank=True, on_delete=models.deletion.CASCADE)
+    parent = models.ForeignKey('Breed', null=True, related_name="+", blank=True, on_delete=deletion.CASCADE)
     matches = models.IntegerField(default=0)
     comments = models.IntegerField(default=0)
     sex = models.CharField(max_length=8, choices=BREED_SEX,default=MALE)
-    location = models.CharField(max_length=50, null=True, blank=True)
     photo = models.ImageField(upload_to="breeds",
                              max_length=500, null=True, blank=True,
                              verbose_name=_("photo"))
@@ -54,15 +70,29 @@ class Breed(models.Model):
 
     def calculate_matches(self):
         matches = Activity.objects.filter(activity_type=Activity.MATCH,
-                                        breed=self.pk).count()
+                                        currentbreed=self.pk).count()
         self.matches = matches
         self.save()
         return self.matches
 
     def get_matches(self):
         matches = Activity.objects.filter(activity_type=Activity.MATCH,
-                                        breed=self.pk)
+                                        currentbreed=self.pk)
         return matches
+
+    def get_match(self):
+        matches = self.get_matches()
+        matchers = []
+        for match in matches:
+            matchers.append(match.breed)
+        return matchers
+
+    def get_match_breed(self):
+        matches = self.get_matches()
+        matchers = []
+        for match in matches:
+            matchers.append(match.breed)
+        return Breed.objects.filter(id__in=matchers)
 
     def get_matchers(self):
         matches = self.get_matches()

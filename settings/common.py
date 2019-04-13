@@ -28,6 +28,7 @@ INSTALLED_APPS = [
 
     "easy_thumbnails",
     'channels',
+    'geoposition',
 
     'breed.activities',
     'breed.authentication',
@@ -36,7 +37,6 @@ INSTALLED_APPS = [
     'breed.messenger',
     'breed.questions',
     'breed.search',
-    'location_field.apps.DefaultConfig',
 ]
 
 MIDDLEWARE = [
@@ -179,10 +179,19 @@ ALLOWED_SIGNUP_DOMAINS = ['*']
 FILE_UPLOAD_TEMP_DIR = '/tmp/'
 FILE_UPLOAD_PERMISSIONS = 0o644
 
+GEOPOSITION_GOOGLE_MAPS_API_KEY = 'AIzaSyCrwPhfT-bJKgHwAljbbqpXidITc-Y__ek'
+
+GEOPOSITION_MAP_OPTIONS = {
+    'minZoom': 12,
+    'maxZoom': 20,
+}
+
+GEOPOSITION_MARKER_OPTIONS = {
+    'cursor': 'move'
+}
 
 # NOTE: DON'T INSERT MORE SETTINGS AFTER THIS LINE
 TEST_RUNNER="django.test.runner.DiscoverRunner"
-
 
 if "test" in sys.argv:
     print ("\033[1;91mNo django tests.\033[0m")

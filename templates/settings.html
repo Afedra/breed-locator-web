@@ -3,6 +3,12 @@
 {% get_available_languages as LANGUAGES %}
 {% get_current_language as CURRENT_LANGUAGE %}
 
+{% block head %}
+<script type="text/javascript" src="/static/js/admin.js"></script>
+{{ form.media }}
+{% endblock %}
+
+
 {% block title %}Account Settings{% endblock %}
 
 {% block main %}
@@ -60,3 +66,4 @@
     </div>
   </div>
 {% endblock main %}
+

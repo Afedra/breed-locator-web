@@ -12,23 +12,20 @@ from django.contrib.auth.models import User
 
 from breed.activities.models import Notification
 from django.contrib.gis.geos import Point
-from location_field.models.spatial import LocationField
+from geoposition.fields import GeopositionField
+from geoposition import Geoposition
 
-
-
-OTHER = 'OTHER'
 FARMER = 'FARMER'
 DOCTOR = 'DOCTOR'
 JOB_TITLE = (
-    (OTHER, 'Other'),
     (FARMER, 'Farmer'),
     (DOCTOR, 'Doctor'),
     )
 
 class Profile(models.Model):
 
-    user = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=deletion.CASCADE)
-    location = models.CharField(max_length=50, null=True, blank=True)
+    user = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=deletion.CASCADE)    
+    location = GeopositionField()
     job_title = models.CharField(max_length=50, null=True, blank=True, choices=JOB_TITLE)
     
     class Meta:
@@ -36,6 +33,9 @@ class Profile(models.Model):
 
     def __str__(self):
         return self.user.username
+
+    def get_location(self):
+        return Geoposition(self.location.latitude,self.location.longitude) 
 
     def get_picture(self):
         no_picture = '/static/img/user.png'

@@ -57,9 +57,6 @@ class SignUpForm(forms.ModelForm):
         max_length=30,
         required=True,
         help_text='Usernames may contain <strong>alphanumeric</strong>, <strong>_</strong> and <strong>.</strong> characters')  # noqa: E261
-    location =  forms.CharField(
-        widget=forms.TextInput(attrs={'class': 'form-control'}),
-        max_length=30)      
 
     first_name = forms.CharField(
         widget=forms.TextInput(attrs={'class': 'form-control'}),
@@ -86,7 +83,7 @@ class SignUpForm(forms.ModelForm):
     class Meta:
         model = User
         exclude = ['last_login', 'date_joined']
-        fields = ['username', 'job_title', 'location','first_name', 'last_name', 'email', 'password', 'confirm_password',]
+        fields = ['username', 'job_title','first_name', 'last_name', 'email', 'password', 'confirm_password',]
 
     def __init__(self, *args, **kwargs):
         super(SignUpForm, self).__init__(*args, **kwargs)

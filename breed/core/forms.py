@@ -1,7 +1,7 @@
 from django import forms
 from django.contrib.auth.models import User
-
-
+from geoposition.fields import GeopositionField
+from breed.authentication.models import Profile
 class ProfileForm(forms.ModelForm):
 
     first_name = forms.CharField(
@@ -12,21 +12,13 @@ class ProfileForm(forms.ModelForm):
         widget=forms.TextInput(attrs={'class': 'form-control'}),
         max_length=30,
         required=False)
-    job_title = forms.CharField(
-        widget=forms.TextInput(attrs={'class': 'form-control'}),
-        max_length=50,
-        required=False)
     email = forms.CharField(
         widget=forms.TextInput(attrs={'class': 'form-control'}),
         max_length=75,
         required=False)
-    location = forms.CharField(
-        widget=forms.TextInput(attrs={'class': 'form-control'}),
-        max_length=50,
-        required=False)
 
     class Meta:
-        model = User
+        model = Profile
         fields = ['first_name', 'last_name', 'job_title',
                   'email', 'location', ]
 
