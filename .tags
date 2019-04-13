@@ -217,6 +217,7 @@ check	breed/messenger/views.py	/^def check(request):$/;"	f
 check_notifications	breed/activities/views.py	/^def check_notifications(request):$/;"	f
 choices	breed/activities/models.py	/^                                         choices=NOTIFICATION_TYPES)$/;"	v	class:Notification
 choices	breed/authentication/forms.py	/^        choices=JOB_TITLE,$/;"	v	class:SignUpForm
+choices	breed/core/forms.py	/^        choices=JOB_TITLE,$/;"	v	class:ProfileForm
 clean	breed/authentication/forms.py	/^    def clean(self):$/;"	m	class:SignUpForm
 clean	breed/core/forms.py	/^    def clean(self):$/;"	m	class:ChangePasswordForm
 comment	breed/breeds/models.py	/^    def comment(self, user, breed):$/;"	m	class:Breed
@@ -366,11 +367,13 @@ is_read	breed/activities/models.py	/^    is_read = models.BooleanField(default=F
 is_read	breed/messenger/models.py	/^    is_read = models.BooleanField(default=False)$/;"	v	class:Message
 job_title	breed/authentication/forms.py	/^    job_title = forms.ChoiceField($/;"	v	class:SignUpForm
 job_title	breed/authentication/models.py	/^    job_title = models.CharField(max_length=50, null=True, blank=True, choices=JOB_TITLE)$/;"	v	class:Profile
+job_title	breed/core/forms.py	/^    job_title = forms.ChoiceField($/;"	v	class:ProfileForm
 label	breed/authentication/forms.py	/^        label="Confirm your password",$/;"	v	class:SignUpForm
 label	breed/authentication/forms.py	/^        label="User Type",$/;"	v	class:SignUpForm
 label	breed/core/forms.py	/^        label="Confirm new password",$/;"	v	class:ChangePasswordForm
 label	breed/core/forms.py	/^        label="New password",$/;"	v	class:ChangePasswordForm
 label	breed/core/forms.py	/^        label="Old password",$/;"	v	class:ChangePasswordForm
+label	breed/core/forms.py	/^        label="User Type",$/;"	v	class:ProfileForm
 last_name	breed/authentication/forms.py	/^    last_name = forms.CharField($/;"	v	class:SignUpForm
 last_name	breed/core/forms.py	/^    last_name = forms.CharField($/;"	v	class:ProfileForm
 last_notifications	breed/activities/views.py	/^def last_notifications(request):$/;"	f
@@ -536,6 +539,7 @@ required	breed/authentication/forms.py	/^        required=True)  $/;"	v	class:Si
 required	breed/authentication/forms.py	/^        required=True)$/;"	v	class:SignUpForm
 required	breed/authentication/forms.py	/^        required=True,$/;"	v	class:SignUpForm
 required	breed/core/forms.py	/^        required=False)$/;"	v	class:ProfileForm
+required	breed/core/forms.py	/^        required=True)  $/;"	v	class:ProfileForm
 required	breed/core/forms.py	/^        required=True)$/;"	v	class:ChangePasswordForm
 required	breed/questions/forms.py	/^        required=False,$/;"	v	class:QuestionForm
 required_settings	geoposition/conf.py	/^    required_settings = [('google', 'GOOGLE_MAPS_API_KEY')]$/;"	v	class:AppSettings
@@ -615,6 +619,7 @@ widget	breed/authentication/forms.py	/^        widget=forms.PasswordInput(attrs=
 widget	breed/authentication/forms.py	/^        widget=forms.Select(attrs={'class': 'form-control'}),$/;"	v	class:SignUpForm
 widget	breed/authentication/forms.py	/^        widget=forms.TextInput(attrs={'class': 'form-control'}),$/;"	v	class:SignUpForm
 widget	breed/core/forms.py	/^        widget=forms.PasswordInput(attrs={'class': 'form-control'}),$/;"	v	class:ChangePasswordForm
+widget	breed/core/forms.py	/^        widget=forms.Select(attrs={'class': 'form-control'}),$/;"	v	class:ProfileForm
 widget	breed/core/forms.py	/^        widget=forms.TextInput(attrs={'class': 'form-control'}),$/;"	v	class:ProfileForm
 widget	breed/questions/forms.py	/^        widget=forms.TextInput(attrs={'class': 'form-control'}),$/;"	v	class:QuestionForm
 widget	breed/questions/forms.py	/^        widget=forms.Textarea(attrs={'class': 'form-control', 'rows': '4'}),$/;"	v	class:AnswerForm
