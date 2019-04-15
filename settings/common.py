@@ -29,6 +29,7 @@ INSTALLED_APPS = [
     "easy_thumbnails",
     'channels',
     'geoposition',
+    'social_django',  
 
     'breed.activities',
     'breed.authentication',
@@ -53,6 +54,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 
+    'social_django.middleware.SocialAuthExceptionMiddleware', 
 ]
 
 ROOT_URLCONF = "breed.urls"
@@ -73,6 +75,8 @@ TEMPLATES = [
                 "django.template.context_processors.static",
                 "django.template.context_processors.tz",
                 "django.contrib.messages.context_processors.messages",
+                'social_django.context_processors.backends',  
+                'social_django.context_processors.login_redirect',                 
             ],
         }
     },
@@ -171,8 +175,9 @@ THUMBNAIL_ALIASES = {
 }
 
 
-LOGIN_URL = '/'
-LOGIN_REDIRECT_URL = '/breeds/'
+LOGIN_URL = 'login'
+LOGOUT_URL = 'logout'
+LOGIN_REDIRECT_URL = 'settings'
 
 ALLOWED_SIGNUP_DOMAINS = ['*']
 
@@ -189,6 +194,18 @@ GEOPOSITION_MAP_OPTIONS = {
 GEOPOSITION_MARKER_OPTIONS = {
     'cursor': 'move'
 }
+
+AUTHENTICATION_BACKENDS = (
+    'social_core.backends.twitter.TwitterOAuth',
+    'social_core.backends.facebook.FacebookOAuth2',
+
+    'django.contrib.auth.backends.ModelBackend',
+)
+
+
+SOCIAL_AUTH_TWITTER_KEY = 'hkHJOSR0AJu9Y6Aklup2NFyE2'
+SOCIAL_AUTH_TWITTER_SECRET = 'mRtao55eHZRJFGY1eKVkqvGBAGXLwpIIJ7MHfVNaYMJbOYALhB'
+
 
 # NOTE: DON'T INSERT MORE SETTINGS AFTER THIS LINE
 TEST_RUNNER="django.test.runner.DiscoverRunner"

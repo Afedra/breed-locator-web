@@ -25,7 +25,7 @@ def signup(request):
             user.profile.job_title = job_title
             user.profile.location = location
             login(request, user)
-            return redirect('/')
+            return redirect('/settings/')
 
     else:
         return render(request, 'signup.html',

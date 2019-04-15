@@ -41,6 +41,7 @@ urlpatterns = [
         name='check_notifications'),
     url(r'^search/$', search_views.search, name='search'),
     url(r'^(?P<username>[^/]+)/$', core_views.profile, name='profile'),
+    url(r'^oauth/', include('social_django.urls', namespace='social')),  
 ]
 
 ##############################################
