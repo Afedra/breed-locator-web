@@ -622,7 +622,7 @@ widget	breed/core/forms.py	/^        widget=forms.PasswordInput(attrs={'class': 
 widget	breed/core/forms.py	/^        widget=forms.Select(attrs={'class': 'form-control'}),$/;"	v	class:ProfileForm
 widget	breed/core/forms.py	/^        widget=forms.TextInput(attrs={'class': 'form-control'}),$/;"	v	class:ProfileForm
 widget	breed/questions/forms.py	/^        widget=forms.TextInput(attrs={'class': 'form-control'}),$/;"	v	class:QuestionForm
-widget	breed/questions/forms.py	/^        widget=forms.Textarea(attrs={'class': 'form-control', 'rows': '4'}),$/;"	v	class:AnswerForm
-widget	breed/questions/forms.py	/^        widget=forms.Textarea(attrs={'class': 'form-control'}),$/;"	v	class:QuestionForm
+widget	breed/questions/forms.py	/^        widget=forms.Textarea(attrs={'class': 'materialize-textarea', 'rows': '4'}),$/;"	v	class:AnswerForm
+widget	breed/questions/forms.py	/^        widget=forms.Textarea(attrs={'class': 'materialize-textarea'}),$/;"	v	class:QuestionForm
 widget_attrs	geoposition/forms.py	/^    def widget_attrs(self, widget):$/;"	m	class:GeopositionField
 wrap	breed/decorators.py	/^    def wrap(request, *args, **kwargs):$/;"	f	function:ajax_required

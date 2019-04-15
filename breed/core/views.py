@@ -118,7 +118,7 @@ def upload_picture(request):
         if not os.path.exists(profile_pictures):
             os.makedirs(profile_pictures)
         f = request.FILES['picture']
-        filename = profile_pictures + request.user.username + '_tmp.jpg'
+        filename = profile_pictures + request.user.username + '.jpg'
         with open(filename, 'wb+') as destination:
             for chunk in f.chunks():
                 destination.write(chunk)

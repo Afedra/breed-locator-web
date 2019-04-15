@@ -14,14 +14,14 @@
 
 {% block main %}
   <div class="page-header">
-    <h1>Breed</h1>
+    <h2>Breed</h2>
   </div>
   <ul class="stream">
     {% include 'partial_breed.html' with breed=breed %}
   </ul>
 
   <div class="page-header">
-    <h1>Matches Made by Owner</h1>
+    <h2>Matches Made by Owner</h2>
   </div>
   <ul class="stream">
     {% for breeds in breed.get_match_breed %}

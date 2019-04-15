@@ -5,7 +5,9 @@
   <div class="row breed-container">
     <div class="breed">
       {% if breed.user == user %}
-        <span class="glyphicon glyphicon-remove remove-breed" title="{% trans 'Click to remove this breed' %}"></span>
+        <button type="button" class="red close white-text remove-breed" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">×</span>
+        </button>
       {% endif %}
       <h3><a href="{% url 'profile' breed.user.username %}">{{ breed.user.profile.get_screen_name }}</a> <small>{{ breed.date|naturaltime }}</small></h3>
       <p><div class="chip">{{ breed.sex }}</div> <div class="chip">{{ breed.breed_type }}</div><br>{{ breed.linkfy_breed|safe }}</p>
