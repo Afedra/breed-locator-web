@@ -29,6 +29,7 @@ def add(request):
         if len(post) > 0:
             breeds.breed = post[:255]
             breeds.sex = request.POST['sex']
+            breeds.breed_type = request.POST['breed_type']
             breeds.photo = request.FILES['picture']
             breeds.save()
             return breed(request, breeds.id)
