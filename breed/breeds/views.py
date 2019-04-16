@@ -46,8 +46,10 @@ def breed(request, pk):
     return render(request, 'breed.html', {'breed': breed})
 
 def statistics(request):
-    all_breeds = Breed.get_breeds().filter(user=request.user)
-    return render(request, 'statistics.html', {})
+    matches = Activity.objects.filter(activity_type=Activity.MATCH)
+    print(matches)
+    all_breeds = Breed.objects.filter(user=request.user, parent=None)
+    return render(request, 'statistics.html', {"breeds": all_breeds, "matches": matches})
 
 def find(request, pk):
     breed = get_object_or_404(Breed, pk=pk)

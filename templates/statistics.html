@@ -15,10 +15,23 @@
     <div class="col m8 offset-m2">
         <div class="panel panel-default">
             <div class="panel-heading">
-                <i class="fa fa-bar-chart-o fa-fw"></i> Breed Analysis Chart
+                <i class="fa fa-bar-chart-o fa-fw"></i> Matches Made Per Breed
             </div>
             <div class="panel-body">
                 <div id="morris-donut-chart"></div>
+            </div>
+        </div>
+    </div>
+  </div>
+
+  <div class="row" style="padding-top:80px;">
+    <div class="col m8 offset-m2">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <i class="fa fa-bar-chart-o fa-fw"></i> Matches Made Per Breed
+            </div>
+            <div class="panel-body">
+                <div id="morris-area-chart"></div>
             </div>
         </div>
     </div>
@@ -32,19 +45,51 @@ $(function() {
 
     Morris.Donut({
         element: 'morris-donut-chart',
-        data: [{
-            label: "Download Sales",
-            value: 12
-        }, {
-            label: "In-Store Sales",
-            value: 30
-        }, {
-            label: "Mail-Order Sales",
-            value: 20
-        }],
+        data: [
+        {% for breed in breeds %}
+        {
+            label: "{{ breed.linkfy_breed|safe }}",
+            value: {{ breed.matches }}
+        },
+        {% endfor %}
+        ],
         resize: true
     });
-    
+    Morris.Area({
+        element: 'morris-area-chart',
+        data: [
+        {
+            period: '2018 Q1',
+            {% for breed in breeds %}
+            "{{ breed.breed_type }}": {{ breed.matches }},
+            {% endfor %}
+        },
+        {
+            period: '2019 Q1',
+            {% for breed in breeds %}
+            "{{ breed.linkfy_breed|safe }}": {{ breed.matches }},
+            {% endfor %}
+        },
+        {
+            period: '2020 Q1',
+            {% for breed in breeds %}
+            "{{ breed.linkfy_breed|safe }}": {{ breed.matches }},
+            {% endfor %}
+        },
+        ],
+        xkey: 'period',
+        ykeys: [
+        {% for breed in breeds %}
+        "{{ breed.breed_type }}",
+        {% endfor %}],
+        labels: [
+        {% for breed in breeds %}
+        "{{ breed.linkfy_breed|safe }}",
+        {% endfor %}],
+        pointSize: 2,
+        hideHover: 'auto',
+        resize: true
+    });    
 });
 </script>
 {% endblock %}
