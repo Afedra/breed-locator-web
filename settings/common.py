@@ -29,7 +29,9 @@ INSTALLED_APPS = [
     "easy_thumbnails",
     'channels',
     'geoposition',
-    'social_django',  
+    'social_django',
+    
+    'django_extensions',  
 
     'breed.activities',
     'breed.authentication',
@@ -214,6 +216,7 @@ SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = 'qgtqa8-YIlOxOxD58Fi4y9v7'
 
 # NOTE: DON'T INSERT MORE SETTINGS AFTER THIS LINE
 TEST_RUNNER="django.test.runner.DiscoverRunner"
+
 
 if "test" in sys.argv:
     print ("\033[1;91mNo django tests.\033[0m")

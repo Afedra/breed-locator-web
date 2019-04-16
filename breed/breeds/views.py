@@ -46,6 +46,7 @@ def breed(request, pk):
     return render(request, 'breed.html', {'breed': breed})
 
 def statistics(request):
+    all_breeds = Breed.get_breeds().filter(user=request.user)
     return render(request, 'statistics.html', {})
 
 def find(request, pk):

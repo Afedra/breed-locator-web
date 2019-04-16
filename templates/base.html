@@ -35,8 +35,8 @@
               <ul class="right hide-on-med-and-down">
                 <li>
                   <a href="javascript:void(0);" class="waves-effect waves-block waves-light profile-button" data-activates="profile-dropdown">
-                    <span class="avatar-status avatar-online">
-                      <img src="{{ request.user.profile.get_picture }}" alt="avatar">
+                    <span class="avatar-status avatar-online" style="width: 50px;">
+                      <img src="{{ request.user.profile.get_picture }}" alt="avatar" style="height:55px;">
                       <i></i>
                     </span>
                   </a>
@@ -48,7 +48,7 @@
       </header>
       <div id="main">
         <div class="wrapper">
-          <aside id="left-sidebar-nav" class="nav-collapsible nav-collapsed">
+          <aside id="left-sidebar-nav" class="nav-collapsible nav-lock">
             <div class="brand-sidebar">
               <h1 class="logo-wrapper">
                 <a href="{% url 'home' %}" class="brand-logo darken-1">
@@ -66,7 +66,7 @@
                   <li class="bold"><a href="{% url 'add' %}"><i class="fa fa-plus"></i> <span class="nav-text">{% trans 'Add Breed' %}</span></a></li>
                   <li class="bold"><a href="{% url 'profile' user.username %}"><i class="fa fa-rss"></i> <span class="nav-text">{% trans 'Your Breeds' %}</span></a></li>
                   <li class="bold"><a href="{% url 'inbox' %}"><i class="fa fa-envelope"></i> <span class="badge pull-right" id="unread-count">0</span><span class="nav-text">{% trans 'Chat' %}</span></a></li>
-                  {% comment %} <li><a href="{% url 'statistics' %}"><span class="fa fa-bar-chart-o "></span> {% trans 'Statistics' %}</a></li> {% endcomment %}
+                  <li class="bold"><a href="{% url 'statistics' %}"><i class="fa fa-bar-chart-o "></i> <span class="nav-text">{% trans 'Statistics' %}</span></a></li>
                   <li class="bold"><a href="{% url 'questions' %}"><i class="fa fa-bullhorn"></i> <span class="nav-text">{% trans 'Ask A Doctor' %}</span></a></li>
                   <li class="bold"><a href="{% url 'network' %}"><i class="fa fa-group"></i> <span class="nav-text">{% trans 'Network' %}</span></a></li>
                   <li class="bold"><a href="{% url 'notifications' %}"><i class="fa fa-bell"></i>  <span class="nav-text">{% trans 'Notifications' %}</span></a></li>

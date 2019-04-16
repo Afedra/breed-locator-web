@@ -48,9 +48,10 @@
                 </form>
                 <div class="row">
                   <div class="input-field col s6 m6 l6">
-                      <a href="{% url 'social:begin' 'google-oauth2' %}">Login with Gmail</a>
-                      <a href="{% url 'social:begin' 'twitter' %}">Login with Twitter</a>
-                      <a href="{% url 'social:begin' 'facebook' %}">Login with Facebook</a>
+                      <a class="btn-floating waves-effect waves-light" href="{% url 'social:begin' 'google-oauth2' %}"><i class="fa fa-google"></i></a>
+                      <a class="btn-floating waves-effect waves-light" href="{% url 'social:begin' 'twitter' %}"><i class="fa fa-twitter"></i></a>
+                      <a class="btn-floating waves-effect waves-light" href="{% url 'social:begin' 'facebook' %}"><i class="fa fa-facebook"></i></a>
+                      or<br>
                       <p class="margin medium-small"><a href="{% url 'signup' %}">{% trans 'Sign up for Breed Locator' %}</a></p>
                   </div>
                 </div>

@@ -24,7 +24,7 @@ def search(request):
 
         count = {}
         results = {}
-        results['breed'] = Breed.objects.filter(breed__icontains=querystring,
+        results['breed'] = Breed.objects.filter(breed_type__icontains=querystring,
                                               parent=None)
         results['questions'] = Question.objects.filter(
             Q(title__icontains=querystring) | Q(
