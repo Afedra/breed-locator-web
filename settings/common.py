@@ -27,7 +27,6 @@ INSTALLED_APPS = [
     'django.contrib.humanize',
 
     "easy_thumbnails",
-    'channels',
     'geoposition',
     'social_django',
     
@@ -85,7 +84,6 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'settings.wsgi.application'
-ASGI_APPLICATION = 'settings.routing.application'
 
 EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 
@@ -214,9 +212,10 @@ SOCIAL_AUTH_FACEBOOK_SECRET = '833127b87bdba33fe95929c015c28cc0'
 SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '463912647232-esbn26umeecfmlg3ddvh9p8anvo3vffo.apps.googleusercontent.com'
 SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = 'qgtqa8-YIlOxOxD58Fi4y9v7'
 
+ML_MODELS_ROOT = os.path.join(BASE_DIR, "ml_models")
+
 # NOTE: DON'T INSERT MORE SETTINGS AFTER THIS LINE
 TEST_RUNNER="django.test.runner.DiscoverRunner"
-
 
 if "test" in sys.argv:
     print ("\033[1;91mNo django tests.\033[0m")

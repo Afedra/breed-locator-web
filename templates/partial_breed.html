@@ -10,7 +10,7 @@
         </button>
       {% endif %}
       <h3><a href="{% url 'profile' breed.user.username %}">{{ breed.user.profile.get_screen_name }}</a> <small>{{ breed.date|naturaltime }}</small></h3>
-      <p><div class="chip">{{ breed.sex }}</div> <div class="chip">{{ breed.breed_type }}</div><br>{{ breed.linkfy_breed|safe }}</p>
+      <p><div class="chip">{{ breed.sex }}</div> <div class="chip">{{ breed.breed_type }}</div><div class="chip">Accuracy of {{ breed.accuracy }}%</div><div class="chip">{{ breed.animal_type }}</div><br>{{ breed.linkfy_breed|safe }}</p>
       <div class="col m6">
         <p><img src="{{ breed.photo.url }}" style="max-height:350px;width:100%;"></p>    
       </div>

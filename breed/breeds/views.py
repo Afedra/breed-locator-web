@@ -1,5 +1,5 @@
 import json
-
+import os
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
@@ -11,7 +11,9 @@ from django.template.loader import render_to_string
 
 from breed.activities.models import Activity
 from breed.decorators import ajax_required
+from django.conf import settings
 from .models import Breed
+from .deep_learning import DeepMachineLearning
 
 BREEDS_NUM_PAGES = 10
 
@@ -30,8 +32,26 @@ def add(request):
             breeds.breed = post[:255]
             breeds.sex = request.POST['sex']
             breeds.breed_type = request.POST['breed_type']
+            breeds.animal_type = request.POST['animal_type']
             breeds.photo = request.FILES['picture']
             breeds.save()
+            print(breeds.breed_type)
+            if (breeds.breed_type == "Unknown"):
+                with open(os.path.join(settings.BASE_DIR, "processing_data", "data", "unknown", "1.jpg"), 'wb') as tmpfile:
+                    for chunk in breeds.photo.file.chunks():
+                        tmpfile.write(chunk)
+
+                with open(os.path.join(settings.BASE_DIR, "processing_data", "data", "unknown", "2.jpg"), 'wb') as tmpfile:
+                    for chunk in breeds.photo.file.chunks():
+                        tmpfile.write(chunk)
+
+                models_folder = settings.ML_MODELS_ROOT
+                deep_learn = DeepMachineLearning()
+                result, probability = deep_learn.learn(os.path.join(models_folder, breeds.animal_type.lower(), 'KNeighbors3', 'KNeighbors3.pkl'))
+                breeds.breed_type = result
+                breeds.accuracy = probability * 100
+                breeds.save()                
+
             return breed(request, breeds.id)
         else:
             messages.add_message(request,
@@ -57,7 +77,7 @@ def find(request, pk):
         sex = "Female"
     else:
         sex = "Male"
-    breeds = Breed.objects.filter(sex=sex, breed_type=breed.breed_type).exclude(pk=breed.pk)
+    breeds = Breed.objects.filter(sex=sex, breed_type=breed.breed_type, animal_type=breed.animal_type).exclude(pk=breed.pk)
     return render(request, 'find.html', {'breeds': breeds, "currentbreed": breed})
 
 @login_required

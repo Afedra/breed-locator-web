@@ -30,13 +30,21 @@ BREED_TYPE = (
     (UNKNOWN, 'Unknown'),
     )
 
+COW = "COW"
+PIG = "PIG"
 
+ANIMAL_TYPE = (
+    (COW, 'Cow'),
+    (PIG, 'Pig'),
+    )
 class Breed(models.Model):
     user = models.ForeignKey(User, on_delete=deletion.CASCADE)
     date = models.DateTimeField(auto_now_add=True)
+    animal_type = models.CharField(max_length=50, choices=ANIMAL_TYPE,default=COW)
     breed_type = models.CharField(max_length=50, choices=BREED_TYPE,default=UNKNOWN)
     breed = models.TextField(max_length=255)
     parent = models.ForeignKey('Breed', null=True, related_name="+", blank=True, on_delete=deletion.CASCADE)
+    accuracy = models.IntegerField(default=100)
     matches = models.IntegerField(default=0)
     comments = models.IntegerField(default=0)
     sex = models.CharField(max_length=8, choices=BREED_SEX,default=MALE)
