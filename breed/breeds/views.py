@@ -1,5 +1,9 @@
 import json
 import os
+import  tensorflow as tf
+from keras.models import model_from_json
+import numpy as np
+from keras.preprocessing import image
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
@@ -13,7 +17,6 @@ from breed.activities.models import Activity
 from breed.decorators import ajax_required
 from django.conf import settings
 from .models import Breed
-from .deep_learning import DeepMachineLearning
 
 BREEDS_NUM_PAGES = 10
 
@@ -28,29 +31,28 @@ def add(request):
         breeds.user = user
         post = request.POST['description']
         post = post.strip()
-        if len(post) > 0:
-            breeds.breed = post[:255]
-            breeds.sex = request.POST['sex']
-            breeds.breed_type = request.POST['breed_type']
-            breeds.animal_type = request.POST['animal_type']
-            breeds.photo = request.FILES['picture']
-            breeds.save()
-            print(breeds.breed_type)
-            if (breeds.breed_type == "Unknown"):
-                with open(os.path.join(settings.BASE_DIR, "processing_data", "data", "unknown", "1.jpg"), 'wb') as tmpfile:
-                    for chunk in breeds.photo.file.chunks():
-                        tmpfile.write(chunk)
-
-                with open(os.path.join(settings.BASE_DIR, "processing_data", "data", "unknown", "2.jpg"), 'wb') as tmpfile:
-                    for chunk in breeds.photo.file.chunks():
-                        tmpfile.write(chunk)
-
-                models_folder = settings.ML_MODELS_ROOT
-                deep_learn = DeepMachineLearning()
-                result, probability = deep_learn.learn(os.path.join(models_folder, breeds.animal_type.lower(), 'KNeighbors3', 'KNeighbors3.pkl'))
-                breeds.breed_type = result
-                breeds.accuracy = probability * 100
-                breeds.save()                
+        breeds.breed = post[:255]
+        breeds.sex = request.POST['sex']
+        breeds.breed_type = request.POST['breed_type']
+        breeds.animal_type = request.POST['animal_type']
+        breeds.photo = request.FILES['picture']
+        breeds.save()
+        if (breeds.breed_type == "Unknown"):
+            json_file = open(os.path.join(settings.BASE_DIR,'dplearning/breed_model.json'), 'r')
+            loaded_model_json = json_file.read()
+            json_file.close()
+            loaded_model = model_from_json(loaded_model_json)
+            # load weights into new model
+            loaded_model.load_weights(open(os.path.join(settings.BASE_DIR,'dplearning/breed_model_weights.h5'), 'rb'))
+            CATEGORY = ['ankole','berkishire','cambra','duroc','fresian','guernsey','hampshire','jersey','kunekune','landrace','largeblack','largewhite','lberian','redhog','saddleback','zebu']
+            test_image=image.load_img(breeds.photo.path,target_size=(150,150))
+            test_image=image.img_to_array(test_image)
+            test_image=np.expand_dims(test_image,axis=0)
+            #result1=loaded_model.predict(test_image)
+            result=loaded_model.predict_classes(test_image)
+            #train_generator.class_indices                
+            breeds.breed_type = CATEGORY[int(result)]
+            breeds.save()                
 
             return breed(request, breeds.id)
         else:

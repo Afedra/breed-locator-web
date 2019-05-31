@@ -44,8 +44,8 @@ class Breed(models.Model):
     breed_type = models.CharField(max_length=50, choices=BREED_TYPE,default=UNKNOWN)
     breed = models.TextField(max_length=255)
     parent = models.ForeignKey('Breed', null=True, related_name="+", blank=True, on_delete=deletion.CASCADE)
-    accuracy = models.IntegerField(default=100)
     matches = models.IntegerField(default=0)
+    rating = models.IntegerField(default=0)
     comments = models.IntegerField(default=0)
     sex = models.CharField(max_length=8, choices=BREED_SEX,default=MALE)
     photo = models.ImageField(upload_to="breeds",
