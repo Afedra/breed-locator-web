@@ -11,7 +11,6 @@ ALLOWED_HOSTS	settings/common.py	/^ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=
 ALLOWED_SIGNUP_DOMAINS	settings/common.py	/^ALLOWED_SIGNUP_DOMAINS = ['*']$/;"	v
 ALSO_COMMENTED	breed/activities/models.py	/^    ALSO_COMMENTED = 'S'$/;"	v	class:Notification
 ANIMAL_TYPE	breed/breeds/models.py	/^ANIMAL_TYPE = ($/;"	v
-ankole	breed/breeds/models.py	/^ankole = "ankole"$/;"	v
 ANSWERED	breed/activities/models.py	/^    ANSWERED = 'A'$/;"	v	class:Notification
 APPEND_SLASH	settings/common.py	/^APPEND_SLASH = True$/;"	v
 AUTHENTICATION_BACKENDS	settings/common.py	/^AUTHENTICATION_BACKENDS = ($/;"	v
@@ -27,7 +26,6 @@ BREED_SEX	breed/breeds/models.py	/^BREED_SEX = ($/;"	v
 BREED_TYPE	breed/breeds/models.py	/^BREED_TYPE = ($/;"	v
 Breed	breed/breeds/models.py	/^class Breed(models.Model):$/;"	c
 COMMENTED	breed/activities/models.py	/^    COMMENTED = 'C'$/;"	v	class:Notification
-cow	breed/breeds/models.py	/^cow = "cow"$/;"	v
 ChangePasswordForm	breed/core/forms.py	/^class ChangePasswordForm(forms.ModelForm):$/;"	c
 DATABASES	geoposition/tests/settings.py	/^DATABASES = {$/;"	v
 DATABASES	settings/common.py	/^DATABASES = {$/;"	v
@@ -35,7 +33,6 @@ DEBUG	geoposition/tests/settings.py	/^DEBUG = True$/;"	v
 DEBUG	settings/common.py	/^DEBUG = config('DEBUG', default=False, cast=bool)$/;"	v
 DOCTOR	breed/authentication/models.py	/^DOCTOR = 'DOCTOR'$/;"	v
 DOWN_VOTE	breed/activities/models.py	/^    DOWN_VOTE = 'D'$/;"	v	class:Activity
-DeepMachineLearning	breed/breeds/deep_learning.py	/^class DeepMachineLearning():$/;"	c
 EMAIL_BACKEND	settings/common.py	/^EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"$/;"	v
 FARMER	breed/authentication/models.py	/^FARMER = 'FARMER'$/;"	v
 FAVORITE	breed/activities/models.py	/^    FAVORITE = 'F'$/;"	v	class:Activity
@@ -43,7 +40,6 @@ FAVORITED	breed/activities/models.py	/^    FAVORITED = 'F'$/;"	v	class:Notificat
 FEMALE	breed/breeds/models.py	/^FEMALE = 'FEMALE'$/;"	v
 FILE_UPLOAD_PERMISSIONS	settings/common.py	/^FILE_UPLOAD_PERMISSIONS = 0o644$/;"	v
 FILE_UPLOAD_TEMP_DIR	settings/common.py	/^FILE_UPLOAD_TEMP_DIR = '\/tmp\/'$/;"	v
-fresian	breed/breeds/models.py	/^fresian = "fresian"$/;"	v
 ForbiddenUsernamesValidator	breed/authentication/forms.py	/^def ForbiddenUsernamesValidator(value):$/;"	f
 GEOPOSITION_GOOGLE_MAPS_API_KEY	geoposition/tests/settings.py	/^GEOPOSITION_GOOGLE_MAPS_API_KEY = 'DUMMY'$/;"	v
 GEOPOSITION_GOOGLE_MAPS_API_KEY	settings/common.py	/^GEOPOSITION_GOOGLE_MAPS_API_KEY = 'AIzaSyCrwPhfT-bJKgHwAljbbqpXidITc-Y__ek'$/;"	v
@@ -59,7 +55,6 @@ GeopositionWidget	geoposition/widgets.py	/^class GeopositionWidget(forms.MultiWi
 INSTALLED_APPS	geoposition/tests/settings.py	/^INSTALLED_APPS = ($/;"	v
 INSTALLED_APPS	settings/common.py	/^INSTALLED_APPS = [$/;"	v
 InvalidUsernameValidator	breed/authentication/forms.py	/^def InvalidUsernameValidator(value):$/;"	f
-jersey	breed/breeds/models.py	/^jersey = "jersey"$/;"	v
 JOB_TITLE	breed/authentication/models.py	/^JOB_TITLE = ($/;"	v
 LANGUAGE_CODE	geoposition/tests/settings.py	/^LANGUAGE_CODE = 'en-us'$/;"	v
 LANGUAGE_CODE	settings/common.py	/^LANGUAGE_CODE = 'en-us'$/;"	v
@@ -73,7 +68,6 @@ MEDIA_ROOT	settings/common.py	/^MEDIA_ROOT = os.path.join(BASE_DIR, "media")$/;"
 MEDIA_URL	settings/common.py	/^MEDIA_URL = "\/media\/"$/;"	v
 MIDDLEWARE	geoposition/tests/settings.py	/^MIDDLEWARE = ($/;"	v
 MIDDLEWARE	settings/common.py	/^MIDDLEWARE = [$/;"	v
-ML_MODELS_ROOT	settings/common.py	/^ML_MODELS_ROOT = os.path.join(BASE_DIR, "ml_models")$/;"	v
 Media	geoposition/widgets.py	/^    class Media:$/;"	c	class:GeopositionWidget
 Message	breed/messenger/models.py	/^class Message(models.Model):$/;"	c
 Meta	breed/activities/models.py	/^    class Meta:$/;"	c	class:Activity
@@ -95,11 +89,12 @@ Migration	breed/breeds/migrations/0001_initial.py	/^class Migration(migrations.M
 Migration	breed/breeds/migrations/0002_breed_animal_type.py	/^class Migration(migrations.Migration):$/;"	c
 Migration	breed/breeds/migrations/0003_auto_20190430_1213.py	/^class Migration(migrations.Migration):$/;"	c
 Migration	breed/breeds/migrations/0004_auto_20190430_1215.py	/^class Migration(migrations.Migration):$/;"	c
+Migration	breed/breeds/migrations/0005_auto_20190528_1710.py	/^class Migration(migrations.Migration):$/;"	c
+Migration	breed/breeds/migrations/0006_auto_20190528_1844.py	/^class Migration(migrations.Migration):$/;"	c
 Migration	breed/messenger/migrations/0001_initial.py	/^class Migration(migrations.Migration):$/;"	c
 Migration	breed/questions/migrations/0001_initial.py	/^class Migration(migrations.Migration):$/;"	c
 NOTIFICATION_TYPES	breed/activities/models.py	/^    NOTIFICATION_TYPES = ($/;"	v	class:Notification
 Notification	breed/activities/models.py	/^class Notification(models.Model):$/;"	c
-pig	breed/breeds/models.py	/^pig = "pig"$/;"	v
 Profile	breed/authentication/models.py	/^class Profile(models.Model):$/;"	c
 ProfileForm	breed/core/forms.py	/^class ProfileForm(forms.ModelForm):$/;"	c
 Question	breed/questions/models.py	/^class Question(models.Model):$/;"	c
@@ -145,7 +140,6 @@ THUMBNAIL_ALIASES	settings/common.py	/^THUMBNAIL_ALIASES = {$/;"	v
 TIME_ZONE	geoposition/tests/settings.py	/^TIME_ZONE = 'UTC'$/;"	v
 TIME_ZONE	settings/common.py	/^TIME_ZONE = 'Africa\/Nairobi'$/;"	v
 Tag	breed/questions/models.py	/^class Tag(models.Model):$/;"	c
-unknown	breed/breeds/models.py	/^unknown = "unknown"$/;"	v
 UP_VOTE	breed/activities/models.py	/^    UP_VOTE = 'U'$/;"	v	class:Activity
 USE_I18N	geoposition/tests/settings.py	/^USE_I18N = True$/;"	v
 USE_I18N	settings/common.py	/^USE_I18N = True$/;"	v
@@ -158,11 +152,9 @@ UniqueEmailValidator	breed/authentication/forms.py	/^def UniqueEmailValidator(va
 UniqueUsernameIgnoreCaseValidator	breed/authentication/forms.py	/^def UniqueUsernameIgnoreCaseValidator(value):$/;"	f
 VERSION	geoposition/__init__.py	/^VERSION = (0, 3, 6)$/;"	v
 WSGI_APPLICATION	settings/common.py	/^WSGI_APPLICATION = 'settings.wsgi.application'$/;"	v
-zebu	breed/breeds/models.py	/^zebu = "zebu"$/;"	v
 __eq__	geoposition/__init__.py	/^    def __eq__(self, other):$/;"	m	class:Geoposition	file:
 __getattr__	geoposition/conf.py	/^    def __getattr__(self, name):$/;"	m	class:AppSettings	file:
 __init__	breed/authentication/forms.py	/^    def __init__(self, *args, **kwargs):$/;"	m	class:SignUpForm
-__init__	breed/breeds/deep_learning.py	/^    def __init__(self):$/;"	m	class:DeepMachineLearning
 __init__	geoposition/__init__.py	/^    def __init__(self, latitude, longitude):$/;"	m	class:Geoposition
 __init__	geoposition/conf.py	/^    def __init__(self, django_settings):$/;"	m	class:AppSettings
 __init__	geoposition/fields.py	/^    def __init__(self, *args, **kwargs):$/;"	m	class:GeopositionField
@@ -185,12 +177,12 @@ _html_breeds	breed/breeds/views.py	/^def _html_breeds(last_breed, user, csrf_tok
 _questions	breed/questions/views.py	/^def _questions(request, questions, active):$/;"	f
 accept	breed/questions/models.py	/^    def accept(self):$/;"	m	class:Answer
 accept	breed/questions/views.py	/^def accept(request):$/;"	f
-accuracy	breed/breeds/models.py	/^    accuracy = models.IntegerField(default=100)$/;"	v	class:Breed
 activity_type	breed/activities/models.py	/^    activity_type = models.CharField(max_length=1, choices=ACTIVITY_TYPES)$/;"	v	class:Activity
 add	breed/breeds/views.py	/^def add(request):$/;"	f
 ajax_required	breed/decorators.py	/^def ajax_required(f):$/;"	f
 all	breed/questions/views.py	/^def all(request):$/;"	f
 animal_type	breed/breeds/models.py	/^    animal_type = models.CharField(max_length=50, choices=ANIMAL_TYPE,default=cow)$/;"	v	class:Breed
+ankole	breed/breeds/models.py	/^ankole = "ankole"$/;"	v
 answer	breed/activities/models.py	/^    answer = models.ForeignKey('questions.Answer', null=True, blank=True, on_delete=models.deletion.CASCADE)$/;"	v	class:Notification
 answer	breed/activities/models.py	/^    answer = models.IntegerField(null=True, blank=True)$/;"	v	class:Activity
 answer	breed/questions/views.py	/^def answer(request):$/;"	f
@@ -198,6 +190,7 @@ answered	breed/questions/views.py	/^def answered(request):$/;"	f
 application	settings/wsgi.py	/^application = get_wsgi_application()$/;"	v
 ask	breed/questions/views.py	/^def ask(request):$/;"	f
 backends	geoposition/widgets.py	/^    backends = {$/;"	v	class:GeopositionWidget
+berkishire	breed/breeds/models.py	/^berkishire="berkishire"$/;"	v
 breed	breed/activities/models.py	/^    breed = models.ForeignKey('breeds.Breed', null=True, blank=True, on_delete=models.deletion.CASCADE)$/;"	v	class:Notification
 breed	breed/activities/models.py	/^    breed = models.IntegerField(null=True, blank=True)$/;"	v	class:Activity
 breed	breed/breeds/models.py	/^    breed = models.TextField(max_length=255)$/;"	v	class:Breed
@@ -207,13 +200,13 @@ calculate_comments	breed/breeds/models.py	/^    def calculate_comments(self):$/;
 calculate_favorites	breed/questions/models.py	/^    def calculate_favorites(self):$/;"	m	class:Question
 calculate_matches	breed/breeds/models.py	/^    def calculate_matches(self):$/;"	m	class:Breed
 calculate_votes	breed/questions/models.py	/^    def calculate_votes(self):$/;"	m	class:Answer
+cambra	breed/breeds/models.py	/^cambra="cambra"$/;"	v
 check	breed/breeds/views.py	/^def check(request):$/;"	f
 check	breed/messenger/views.py	/^def check(request):$/;"	f
 check_notifications	breed/activities/views.py	/^def check_notifications(request):$/;"	f
 choices	breed/activities/models.py	/^                                         choices=NOTIFICATION_TYPES)$/;"	v	class:Notification
 choices	breed/authentication/forms.py	/^        choices=JOB_TITLE,$/;"	v	class:SignUpForm
 choices	breed/core/forms.py	/^        choices=JOB_TITLE,$/;"	v	class:ProfileForm
-classify_objects	breed/breeds/deep_learning.py	/^    def classify_objects(self, object_to_classify, model):$/;"	m	class:DeepMachineLearning
 clean	breed/authentication/forms.py	/^    def clean(self):$/;"	m	class:SignUpForm
 clean	breed/core/forms.py	/^    def clean(self):$/;"	m	class:ChangePasswordForm
 comment	breed/breeds/models.py	/^    def comment(self, user, breed):$/;"	m	class:Breed
@@ -223,6 +216,7 @@ compress	geoposition/forms.py	/^    def compress(self, value_list):$/;"	m	class:
 confirm_password	breed/authentication/forms.py	/^    confirm_password = forms.CharField($/;"	v	class:SignUpForm
 confirm_password	breed/core/forms.py	/^    confirm_password = forms.CharField($/;"	v	class:ChangePasswordForm
 conversation	breed/messenger/models.py	/^    conversation = models.ForeignKey(User, related_name='+', on_delete=models.deletion.CASCADE)$/;"	v	class:Message
+cow	breed/breeds/models.py	/^cow = "cow"$/;"	v
 create_date	breed/questions/models.py	/^    create_date = models.DateTimeField(auto_now_add=True)$/;"	v	class:Answer
 create_date	breed/questions/models.py	/^    create_date = models.DateTimeField(auto_now_add=True)$/;"	v	class:Question
 create_tags	breed/questions/models.py	/^    def create_tags(self, tags):$/;"	m	class:Question
@@ -246,6 +240,8 @@ dependencies	breed/breeds/migrations/0001_initial.py	/^    dependencies = [$/;"	
 dependencies	breed/breeds/migrations/0002_breed_animal_type.py	/^    dependencies = [$/;"	v	class:Migration
 dependencies	breed/breeds/migrations/0003_auto_20190430_1213.py	/^    dependencies = [$/;"	v	class:Migration
 dependencies	breed/breeds/migrations/0004_auto_20190430_1215.py	/^    dependencies = [$/;"	v	class:Migration
+dependencies	breed/breeds/migrations/0005_auto_20190528_1710.py	/^    dependencies = [$/;"	v	class:Migration
+dependencies	breed/breeds/migrations/0006_auto_20190528_1844.py	/^    dependencies = [$/;"	v	class:Migration
 dependencies	breed/messenger/migrations/0001_initial.py	/^    dependencies = [$/;"	v	class:Migration
 dependencies	breed/questions/migrations/0001_initial.py	/^    dependencies = [$/;"	v	class:Migration
 description	breed/questions/forms.py	/^    description = forms.CharField($/;"	v	class:AnswerForm
@@ -253,8 +249,7 @@ description	breed/questions/forms.py	/^    description = forms.CharField($/;"	v	
 description	breed/questions/models.py	/^    description = models.TextField(max_length=2000)$/;"	v	class:Answer
 description	breed/questions/models.py	/^    description = models.TextField(max_length=2000)$/;"	v	class:Question
 description	geoposition/fields.py	/^    description = _("A geoposition (latitude and longitude)")$/;"	v	class:GeopositionField
-do_analysis	breed/breeds/data_collector.py	/^    def do_analysis(breed):$/;"	f	function:get_image_data
-do_analysis	breed/breeds/data_collector.py	/^    def do_analysis(i, breed):$/;"	f	function:get_image_data
+duroc	breed/breeds/models.py	/^duroc="duroc"$/;"	v
 email	breed/authentication/forms.py	/^    email = forms.CharField($/;"	v	class:SignUpForm
 email	breed/core/forms.py	/^    email = forms.CharField($/;"	v	class:ProfileForm
 exclude	breed/authentication/forms.py	/^        exclude = ['last_login', 'date_joined']$/;"	v	class:SignUpForm.Meta
@@ -265,6 +260,8 @@ field	breed/breeds/migrations/0003_auto_20190430_1213.py	/^            field=mod
 field	breed/breeds/migrations/0003_auto_20190430_1213.py	/^            field=models.IntegerField(default=100),$/;"	v	class:Migration
 field	breed/breeds/migrations/0004_auto_20190430_1215.py	/^            field=models.CharField(choices=[('ankole', 'ankole'), ('jersey', 'jersey'), ('zebu', 'zebu'), ('fresian', 'fresian'), ('unknown', 'unknown')], default='unknown', max_length=50),$/;"	v	class:Migration
 field	breed/breeds/migrations/0004_auto_20190430_1215.py	/^            field=models.CharField(choices=[('cow', 'cow'), ('pig', 'pig')], default='cow', max_length=50),$/;"	v	class:Migration
+field	breed/breeds/migrations/0005_auto_20190528_1710.py	/^            field=models.IntegerField(default=0),$/;"	v	class:Migration
+field	breed/breeds/migrations/0006_auto_20190528_1844.py	/^            field=models.CharField(choices=[('ankole', 'ankole'), ('jersey', 'jersey'), ('zebu', 'zebu'), ('fresian', 'fresian'), ('unknown', 'unknown'), ('guernsey', 'guernsey'), ('berkishire', 'berkishire'), ('cambra', 'cambra'), ('duroc', 'duroc'), ('hampshire', 'hampshire'), ('kunekune', 'kunekune'), ('landrace', 'landrace'), ('largeblack', 'largeblack'), ('largewhite', 'largewhite'), ('lberian', 'lberian'), ('redhog', 'redhog'), ('saddleback', 'saddleback')], default='unknown', max_length=50),$/;"	v	class:Migration
 field	breed/questions/migrations/0001_initial.py	/^            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='questions.Question'),$/;"	v	class:Migration
 field	breed/questions/migrations/0001_initial.py	/^            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL),$/;"	v	class:Migration
 fields	breed/activities/migrations/0001_initial.py	/^            fields=[$/;"	v	class:Migration
@@ -281,16 +278,14 @@ find	breed/breeds/views.py	/^def find(request, pk):$/;"	f
 first_name	breed/authentication/forms.py	/^    first_name = forms.CharField($/;"	v	class:SignUpForm
 first_name	breed/core/forms.py	/^    first_name = forms.CharField($/;"	v	class:ProfileForm
 formfield	geoposition/fields.py	/^    def formfield(self, **kwargs):$/;"	m	class:GeopositionField
+fresian	breed/breeds/models.py	/^fresian = "fresian"$/;"	v
 from_db_value	geoposition/fields.py	/^    def from_db_value(self, value, expression, connection, context):$/;"	m	class:GeopositionField
 from_user	breed/activities/models.py	/^    from_user = models.ForeignKey(User, related_name='+', on_delete=models.deletion.CASCADE)$/;"	v	class:Notification
 from_user	breed/messenger/models.py	/^    from_user = models.ForeignKey(User, related_name='+', on_delete=models.deletion.CASCADE)$/;"	v	class:Message
-getBBs	breed/breeds/data_collector.py	/^    def getBBs(event, x, y, flags, param):$/;"	f	function:get_image_data
-getOutliers	breed/breeds/data_collector.py	/^    def getOutliers(df):$/;"	f	function:get_image_data
 get_accepted_answer	breed/questions/models.py	/^    def get_accepted_answer(self):$/;"	m	class:Question
 get_answered	breed/questions/models.py	/^    def get_answered():$/;"	m	class:Question
 get_answers	breed/questions/models.py	/^    def get_answers(self):$/;"	m	class:Question
 get_answers_count	breed/questions/models.py	/^    def get_answers_count(self):$/;"	m	class:Question
-get_avg_hara	breed/breeds/data_collector.py	/^    def get_avg_hara(im, rects):$/;"	f	function:get_image_data
 get_breeds	breed/breeds/models.py	/^    def get_breeds(from_breed=None):$/;"	m	class:Breed
 get_breeds_after	breed/breeds/models.py	/^    def get_breeds_after(breed):$/;"	m	class:Breed
 get_comments	breed/breeds/models.py	/^    def get_comments(self):$/;"	m	class:Breed
@@ -303,12 +298,6 @@ get_description_preview	breed/questions/models.py	/^    def get_description_prev
 get_description_preview_as_markdown	breed/questions/models.py	/^    def get_description_preview_as_markdown(self):$/;"	m	class:Question
 get_down_voters	breed/questions/models.py	/^    def get_down_voters(self):$/;"	m	class:Answer
 get_favoriters	breed/questions/models.py	/^    def get_favoriters(self):$/;"	m	class:Question
-get_fg_bg_color_hists	breed/breeds/data_collector.py	/^    def get_fg_bg_color_hists(fg, bg):$/;"	f	function:get_image_data
-get_fg_bg_rects	breed/breeds/data_collector.py	/^    def get_fg_bg_rects(fg):$/;"	f	function:get_image_data
-get_fg_color_hists	breed/breeds/data_collector.py	/^    def get_fg_color_hists(fg):$/;"	f	function:get_image_data
-get_fg_rects	breed/breeds/data_collector.py	/^    def get_fg_rects(fg):$/;"	f	function:get_image_data
-get_hara_stats	breed/breeds/data_collector.py	/^    def get_hara_stats(df):$/;"	f	function:get_image_data
-get_image_data	breed/breeds/data_collector.py	/^def get_image_data():$/;"	f
 get_internal_type	geoposition/fields.py	/^    def get_internal_type(self):$/;"	m	class:GeopositionField
 get_location	breed/authentication/models.py	/^    def get_location(self):$/;"	m	class:Profile
 get_match	breed/breeds/models.py	/^    def get_match(self):$/;"	m	class:Breed
@@ -317,12 +306,13 @@ get_matchers	breed/breeds/models.py	/^    def get_matchers(self):$/;"	m	class:Br
 get_matches	breed/breeds/models.py	/^    def get_matches(self):$/;"	m	class:Breed
 get_picture	breed/authentication/models.py	/^    def get_picture(self):$/;"	m	class:Profile
 get_prep_value	geoposition/fields.py	/^    def get_prep_value(self, value):$/;"	m	class:GeopositionField
-get_rect	breed/breeds/data_collector.py	/^    def get_rect(rectI):$/;"	f	function:get_image_data
 get_screen_name	breed/authentication/models.py	/^    def get_screen_name(self):$/;"	m	class:Profile
 get_summary	breed/activities/models.py	/^    def get_summary(self, value):$/;"	m	class:Notification
 get_tags	breed/questions/models.py	/^    def get_tags(self):$/;"	m	class:Question
 get_unanswered	breed/questions/models.py	/^    def get_unanswered():$/;"	m	class:Question
 get_up_voters	breed/questions/models.py	/^    def get_up_voters(self):$/;"	m	class:Answer
+guernsey	breed/breeds/models.py	/^guernsey="guernsey"$/;"	v
+hampshire	breed/breeds/models.py	/^hampshire="hampshire"$/;"	v
 has_accepted_answer	breed/questions/models.py	/^    has_accepted_answer = models.BooleanField(default=False)$/;"	v	class:Question
 help_text	breed/authentication/forms.py	/^        help_text='Usernames may contain <strong>alphanumeric<\/strong>, <strong>_<\/strong> and <strong>.<\/strong> characters')  # noqa: E261$/;"	v	class:SignUpForm
 help_text	breed/questions/forms.py	/^        help_text='Use spaces to separate the tags, such as "asp.net mvc5 javascript"')  # noqa: E501$/;"	v	class:QuestionForm
@@ -339,26 +329,28 @@ initial	breed/questions/migrations/0001_initial.py	/^    initial = True$/;"	v	cl
 is_accepted	breed/questions/models.py	/^    is_accepted = models.BooleanField(default=False)$/;"	v	class:Answer
 is_read	breed/activities/models.py	/^    is_read = models.BooleanField(default=False)$/;"	v	class:Notification
 is_read	breed/messenger/models.py	/^    is_read = models.BooleanField(default=False)$/;"	v	class:Message
+jersey	breed/breeds/models.py	/^jersey = "jersey"$/;"	v
 job_title	breed/authentication/forms.py	/^    job_title = forms.ChoiceField($/;"	v	class:SignUpForm
 job_title	breed/authentication/models.py	/^    job_title = models.CharField(max_length=50, null=True, blank=True, choices=JOB_TITLE)$/;"	v	class:Profile
 job_title	breed/core/forms.py	/^    job_title = forms.ChoiceField($/;"	v	class:ProfileForm
+kunekune	breed/breeds/models.py	/^kunekune="kunekune"$/;"	v
 label	breed/authentication/forms.py	/^        label="Confirm your password",$/;"	v	class:SignUpForm
 label	breed/authentication/forms.py	/^        label="User Type",$/;"	v	class:SignUpForm
 label	breed/core/forms.py	/^        label="Confirm new password",$/;"	v	class:ChangePasswordForm
 label	breed/core/forms.py	/^        label="New password",$/;"	v	class:ChangePasswordForm
 label	breed/core/forms.py	/^        label="Old password",$/;"	v	class:ChangePasswordForm
 label	breed/core/forms.py	/^        label="User Type",$/;"	v	class:ProfileForm
+landrace	breed/breeds/models.py	/^landrace="landrace"$/;"	v
+largeblack	breed/breeds/models.py	/^largeblack="largeblack"$/;"	v
+largewhite	breed/breeds/models.py	/^largewhite="largewhite"$/;"	v
 last_name	breed/authentication/forms.py	/^    last_name = forms.CharField($/;"	v	class:SignUpForm
 last_name	breed/core/forms.py	/^    last_name = forms.CharField($/;"	v	class:ProfileForm
 last_notifications	breed/activities/views.py	/^def last_notifications(request):$/;"	f
-learn	breed/breeds/deep_learning.py	/^    def learn(self, modelDir):$/;"	m	class:DeepMachineLearning
+lberian	breed/breeds/models.py	/^lberian="lberian"$/;"	v
 linkfy_breed	breed/breeds/models.py	/^    def linkfy_breed(self):$/;"	m	class:Breed
 load	breed/breeds/views.py	/^def load(request):$/;"	f
-loadIm	breed/breeds/data_collector.py	/^    def loadIm(breed, randPic=False):$/;"	f	function:get_image_data
-load_model	breed/breeds/deep_learning.py	/^    def load_model(self, model_dir):$/;"	m	class:DeepMachineLearning
 load_new	breed/breeds/views.py	/^def load_new(request):$/;"	f
 location	breed/authentication/models.py	/^    location = GeopositionField()$/;"	v	class:Profile
-make_fg_bg_hist_plot	breed/breeds/data_collector.py	/^    def make_fg_bg_hist_plot(fg, bg):$/;"	f	function:get_image_data
 match	breed/breeds/views.py	/^def match(request):$/;"	f
 matches	breed/breeds/models.py	/^    matches = models.IntegerField(default=0)$/;"	v	class:Breed
 max_length	breed/authentication/forms.py	/^        max_length=30)$/;"	v	class:SignUpForm
@@ -381,6 +373,8 @@ model	breed/questions/forms.py	/^        model = Question$/;"	v	class:QuestionFo
 model_name	breed/breeds/migrations/0002_breed_animal_type.py	/^            model_name='breed',$/;"	v	class:Migration
 model_name	breed/breeds/migrations/0003_auto_20190430_1213.py	/^            model_name='breed',$/;"	v	class:Migration
 model_name	breed/breeds/migrations/0004_auto_20190430_1215.py	/^            model_name='breed',$/;"	v	class:Migration
+model_name	breed/breeds/migrations/0005_auto_20190528_1710.py	/^            model_name='breed',$/;"	v	class:Migration
+model_name	breed/breeds/migrations/0006_auto_20190528_1844.py	/^            model_name='breed',$/;"	v	class:Migration
 model_name	breed/questions/migrations/0001_initial.py	/^            model_name='answer',$/;"	v	class:Migration
 name	breed/activities/migrations/0001_initial.py	/^            name='Activity',$/;"	v	class:Migration
 name	breed/activities/migrations/0001_initial.py	/^            name='Notification',$/;"	v	class:Migration
@@ -391,6 +385,10 @@ name	breed/breeds/migrations/0003_auto_20190430_1213.py	/^            name='accu
 name	breed/breeds/migrations/0003_auto_20190430_1213.py	/^            name='breed_type',$/;"	v	class:Migration
 name	breed/breeds/migrations/0004_auto_20190430_1215.py	/^            name='animal_type',$/;"	v	class:Migration
 name	breed/breeds/migrations/0004_auto_20190430_1215.py	/^            name='breed_type',$/;"	v	class:Migration
+name	breed/breeds/migrations/0005_auto_20190528_1710.py	/^            name='accuracy',$/;"	v	class:Migration
+name	breed/breeds/migrations/0005_auto_20190528_1710.py	/^            name='rating',$/;"	v	class:Migration
+name	breed/breeds/migrations/0006_auto_20190528_1844.py	/^            name='breed',$/;"	v	class:Migration
+name	breed/breeds/migrations/0006_auto_20190528_1844.py	/^            name='breed_type',$/;"	v	class:Migration
 name	breed/messenger/migrations/0001_initial.py	/^            name='Message',$/;"	v	class:Migration
 name	breed/questions/migrations/0001_initial.py	/^            name='Answer',$/;"	v	class:Migration
 name	breed/questions/migrations/0001_initial.py	/^            name='Question',$/;"	v	class:Migration
@@ -408,7 +406,6 @@ name	geoposition/apps.py	/^    name = 'geoposition'$/;"	v	class:GeoPositionConfi
 network	breed/core/views.py	/^def network(request):$/;"	f
 new	breed/messenger/views.py	/^def new(request):$/;"	f
 new_password	breed/core/forms.py	/^    new_password = forms.CharField($/;"	v	class:ChangePasswordForm
-nextIm	breed/breeds/data_collector.py	/^    def nextIm(randPic=False, dir='foreground', newBreed=False):$/;"	f	function:get_image_data
 notification_type	breed/activities/models.py	/^    notification_type = models.CharField(max_length=8,$/;"	v	class:Notification
 notifications	breed/activities/views.py	/^def notifications(request):$/;"	f
 notify_accepted	breed/authentication/models.py	/^    def notify_accepted(self, answer):$/;"	m	class:Profile
@@ -424,15 +421,18 @@ operations	breed/breeds/migrations/0001_initial.py	/^    operations = [$/;"	v	cl
 operations	breed/breeds/migrations/0002_breed_animal_type.py	/^    operations = [$/;"	v	class:Migration
 operations	breed/breeds/migrations/0003_auto_20190430_1213.py	/^    operations = [$/;"	v	class:Migration
 operations	breed/breeds/migrations/0004_auto_20190430_1215.py	/^    operations = [$/;"	v	class:Migration
+operations	breed/breeds/migrations/0005_auto_20190528_1710.py	/^    operations = [$/;"	v	class:Migration
+operations	breed/breeds/migrations/0006_auto_20190528_1844.py	/^    operations = [$/;"	v	class:Migration
 operations	breed/messenger/migrations/0001_initial.py	/^    operations = [$/;"	v	class:Migration
 operations	breed/questions/migrations/0001_initial.py	/^    operations = [$/;"	v	class:Migration
 options	breed/activities/migrations/0001_initial.py	/^            options={$/;"	v	class:Migration
 options	breed/authentication/migrations/0001_initial.py	/^            options={$/;"	v	class:Migration
 options	breed/breeds/migrations/0001_initial.py	/^            options={$/;"	v	class:Migration
+options	breed/breeds/migrations/0006_auto_20190528_1844.py	/^            options={'ordering': ('rating',), 'verbose_name': 'Breed', 'verbose_name_plural': 'Breed'},$/;"	v	class:Migration
 options	breed/messenger/migrations/0001_initial.py	/^            options={$/;"	v	class:Migration
 options	breed/questions/migrations/0001_initial.py	/^            options={$/;"	v	class:Migration
 ordering	breed/activities/models.py	/^        ordering = ('-date',)$/;"	v	class:Notification.Meta
-ordering	breed/breeds/models.py	/^        ordering = ('-date',)$/;"	v	class:Breed.Meta
+ordering	breed/breeds/models.py	/^        ordering = ('rating',)$/;"	v	class:Breed.Meta
 ordering	breed/messenger/models.py	/^        ordering = ('date',)$/;"	v	class:Message.Meta
 ordering	breed/questions/models.py	/^        ordering = ('-is_accepted', '-votes', 'create_date',)$/;"	v	class:Answer.Meta
 ordering	breed/questions/models.py	/^        ordering = ('-update_date',)$/;"	v	class:Question.Meta
@@ -441,6 +441,7 @@ password	breed/authentication/forms.py	/^    password = forms.CharField($/;"	v	c
 password	breed/core/views.py	/^def password(request):$/;"	f
 photo	breed/breeds/models.py	/^    photo = models.ImageField(upload_to="breeds",$/;"	v	class:Breed
 picture	breed/core/views.py	/^def picture(request):$/;"	f
+pig	breed/breeds/models.py	/^pig = "pig"$/;"	v
 prefix	geoposition/conf.py	/^    prefix = 'GEOPOSITION'$/;"	v	class:AppSettings
 profile	breed/core/views.py	/^def profile(request, username):$/;"	f
 queryset	breed/questions/forms.py	/^                                      queryset=Question.objects.all())$/;"	v	class:AnswerForm
@@ -451,6 +452,8 @@ question	breed/questions/models.py	/^    question = models.ForeignKey(Question, 
 question	breed/questions/models.py	/^    question = models.ForeignKey(Question, on_delete=models.deletion.CASCADE)$/;"	v	class:Tag
 question	breed/questions/views.py	/^def question(request, pk):$/;"	f
 questions	breed/questions/views.py	/^def questions(request):$/;"	f
+rating	breed/breeds/models.py	/^    rating = models.IntegerField(default=0)$/;"	v	class:Breed
+redhog	breed/breeds/models.py	/^redhog="redhog"$/;"	v
 remove	breed/breeds/views.py	/^def remove(request):$/;"	f
 required	breed/authentication/forms.py	/^        required=True)  $/;"	v	class:SignUpForm
 required	breed/authentication/forms.py	/^        required=True)$/;"	v	class:SignUpForm
@@ -460,6 +463,7 @@ required	breed/core/forms.py	/^        required=True)  $/;"	v	class:ProfileForm
 required	breed/core/forms.py	/^        required=True)$/;"	v	class:ChangePasswordForm
 required	breed/questions/forms.py	/^        required=False,$/;"	v	class:QuestionForm
 required_settings	geoposition/conf.py	/^    required_settings = [('google', 'GOOGLE_MAPS_API_KEY')]$/;"	v	class:AppSettings
+saddleback	breed/breeds/models.py	/^saddleback="saddleback"$/;"	v
 save_uploaded_picture	breed/core/views.py	/^def save_uploaded_picture(request):$/;"	f
 save_user_profile	breed/authentication/models.py	/^def save_user_profile(sender, instance, **kwargs):$/;"	f
 search	breed/search/views.py	/^def search(request):$/;"	f
@@ -468,7 +472,6 @@ send_message	breed/messenger/models.py	/^    def send_message(from_user, to_user
 settings	breed/core/views.py	/^def settings(request):$/;"	f
 settings	geoposition/conf.py	/^settings = AppSettings(django_settings)$/;"	v
 sex	breed/breeds/models.py	/^    sex = models.CharField(max_length=8, choices=BREED_SEX,default=MALE)$/;"	v	class:Breed
-show_examples	breed/breeds/data_collector.py	/^    def show_examples(idxs, printStd=True):$/;"	f	function:get_image_data
 signup	breed/authentication/views.py	/^def signup(request):$/;"	f
 statistics	breed/breeds/views.py	/^def statistics(request):$/;"	f
 tag	breed/questions/models.py	/^    tag = models.CharField(max_length=50)$/;"	v	class:Tag
@@ -492,6 +495,7 @@ track_comments	breed/breeds/views.py	/^def track_comments(request):$/;"	f
 unanswered	breed/questions/views.py	/^def unanswered(request):$/;"	f
 unique_together	breed/questions/migrations/0001_initial.py	/^            unique_together={('tag', 'question')},$/;"	v	class:Migration
 unique_together	breed/questions/models.py	/^        unique_together = (('tag', 'question'),)$/;"	v	class:Tag.Meta
+unknown	breed/breeds/models.py	/^unknown = "unknown"$/;"	v
 unotify_accepted	breed/authentication/models.py	/^    def unotify_accepted(self, answer):$/;"	m	class:Profile
 unotify_favorited	breed/authentication/models.py	/^    def unotify_favorited(self, question):$/;"	m	class:Profile
 unotify_matched	breed/authentication/models.py	/^    def unotify_matched(self, breed):$/;"	m	class:Profile
@@ -544,4 +548,4 @@ widget	breed/questions/forms.py	/^        widget=forms.Textarea(attrs={'class': 
 widget	breed/questions/forms.py	/^        widget=forms.Textarea(attrs={'class': 'materialize-textarea'}),$/;"	v	class:QuestionForm
 widget_attrs	geoposition/forms.py	/^    def widget_attrs(self, widget):$/;"	m	class:GeopositionField
 wrap	breed/decorators.py	/^    def wrap(request, *args, **kwargs):$/;"	f	function:ajax_required
-writeROIs	breed/breeds/data_collector.py	/^    def writeROIs(RESULT_DICT, IMAGE_PATH):$/;"	f	function:get_image_data
+zebu	breed/breeds/models.py	/^zebu = "zebu"$/;"	v
