@@ -39,6 +39,8 @@
         <a href="{% url 'breed' breed.id %}" class="pull-right">
           <span class="text">View</span>
         </a>
+        <input type="hidden" class="rating"/>
+
       </div>
       <div class="comments">
         <form role="form" method="post" action="{{ comment }}" onsubmit="return false">

@@ -18,6 +18,6 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='breed',
             name='breed_type',
-            field=models.CharField(choices=[('ANKOLE', 'Ankole'), ('JERSEY', 'Jersey'), ('ZEBU', 'Zebu'), ('FRESIAN', 'Fresian'), ('UNKNOWN', 'Unknown')], default='COW', max_length=50),
+            field=models.CharField(choices=[('ankole', 'ankole'), ('jersey', 'jersey'), ('zebu', 'zebu'), ('fresian', 'fresian'), ('unknown', 'unknown')], default='cow', max_length=50),
         ),
     ]

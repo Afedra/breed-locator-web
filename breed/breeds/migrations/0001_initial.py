@@ -19,7 +19,7 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('date', models.DateTimeField(auto_now_add=True)),
-                ('breed_type', models.CharField(choices=[('ANKOLE', 'Ankole'), ('JERSEY', 'Jersey'), ('ZEBU', 'Zebu'), ('FRESIAN', 'Fresian'), ('UNKNOWN', 'Unknown')], default='UNKNOWN', max_length=50)),
+                ('breed_type', models.CharField(choices=[('ankole', 'ankole'), ('jersey', 'jersey'), ('zebu', 'zebu'), ('fresian', 'fresian'), ('unknown', 'unknown')], default='unknown', max_length=50)),
                 ('breed', models.TextField(max_length=255)),
                 ('matches', models.IntegerField(default=0)),
                 ('comments', models.IntegerField(default=0)),

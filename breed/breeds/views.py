@@ -37,13 +37,14 @@ def add(request):
         breeds.animal_type = request.POST['animal_type']
         breeds.photo = request.FILES['picture']
         breeds.save()
-        if (breeds.breed_type == "Unknown"):
+        print(os.path.join(settings.BASE_DIR,'dplearning/breed_model_weights.h5'))
+        if (breeds.breed_type == "unknown"):
             json_file = open(os.path.join(settings.BASE_DIR,'dplearning/breed_model.json'), 'r')
             loaded_model_json = json_file.read()
             json_file.close()
             loaded_model = model_from_json(loaded_model_json)
             # load weights into new model
-            loaded_model.load_weights(open(os.path.join(settings.BASE_DIR,'dplearning/breed_model_weights.h5'), 'rb'))
+            loaded_model.load_weights(open(os.path.join(settings.BASE_DIR,'dplearning/breed_model_weights.h5'),'rb'))
             CATEGORY = ['ankole','berkishire','cambra','duroc','fresian','guernsey','hampshire','jersey','kunekune','landrace','largeblack','largewhite','lberian','redhog','saddleback','zebu']
             test_image=image.load_img(breeds.photo.path,target_size=(150,150))
             test_image=image.img_to_array(test_image)

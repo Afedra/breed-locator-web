@@ -13,6 +13,6 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='breed',
             name='animal_type',
-            field=models.CharField(choices=[('COW', 'Cow'), ('PIG', 'Pig')], default='UNKNOWN', max_length=50),
+            field=models.CharField(choices=[('cow', 'cow'), ('pig', 'pig')], default='unknown', max_length=50),
         ),
     ]

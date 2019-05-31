@@ -11,7 +11,7 @@ ALLOWED_HOSTS	settings/common.py	/^ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=
 ALLOWED_SIGNUP_DOMAINS	settings/common.py	/^ALLOWED_SIGNUP_DOMAINS = ['*']$/;"	v
 ALSO_COMMENTED	breed/activities/models.py	/^    ALSO_COMMENTED = 'S'$/;"	v	class:Notification
 ANIMAL_TYPE	breed/breeds/models.py	/^ANIMAL_TYPE = ($/;"	v
-ANKOLE	breed/breeds/models.py	/^ANKOLE = "ANKOLE"$/;"	v
+ankole	breed/breeds/models.py	/^ankole = "ankole"$/;"	v
 ANSWERED	breed/activities/models.py	/^    ANSWERED = 'A'$/;"	v	class:Notification
 APPEND_SLASH	settings/common.py	/^APPEND_SLASH = True$/;"	v
 AUTHENTICATION_BACKENDS	settings/common.py	/^AUTHENTICATION_BACKENDS = ($/;"	v
@@ -27,7 +27,7 @@ BREED_SEX	breed/breeds/models.py	/^BREED_SEX = ($/;"	v
 BREED_TYPE	breed/breeds/models.py	/^BREED_TYPE = ($/;"	v
 Breed	breed/breeds/models.py	/^class Breed(models.Model):$/;"	c
 COMMENTED	breed/activities/models.py	/^    COMMENTED = 'C'$/;"	v	class:Notification
-COW	breed/breeds/models.py	/^COW = "COW"$/;"	v
+cow	breed/breeds/models.py	/^cow = "cow"$/;"	v
 ChangePasswordForm	breed/core/forms.py	/^class ChangePasswordForm(forms.ModelForm):$/;"	c
 DATABASES	geoposition/tests/settings.py	/^DATABASES = {$/;"	v
 DATABASES	settings/common.py	/^DATABASES = {$/;"	v
@@ -43,7 +43,7 @@ FAVORITED	breed/activities/models.py	/^    FAVORITED = 'F'$/;"	v	class:Notificat
 FEMALE	breed/breeds/models.py	/^FEMALE = 'FEMALE'$/;"	v
 FILE_UPLOAD_PERMISSIONS	settings/common.py	/^FILE_UPLOAD_PERMISSIONS = 0o644$/;"	v
 FILE_UPLOAD_TEMP_DIR	settings/common.py	/^FILE_UPLOAD_TEMP_DIR = '\/tmp\/'$/;"	v
-FRESIAN	breed/breeds/models.py	/^FRESIAN = "FRESIAN"$/;"	v
+fresian	breed/breeds/models.py	/^fresian = "fresian"$/;"	v
 ForbiddenUsernamesValidator	breed/authentication/forms.py	/^def ForbiddenUsernamesValidator(value):$/;"	f
 GEOPOSITION_GOOGLE_MAPS_API_KEY	geoposition/tests/settings.py	/^GEOPOSITION_GOOGLE_MAPS_API_KEY = 'DUMMY'$/;"	v
 GEOPOSITION_GOOGLE_MAPS_API_KEY	settings/common.py	/^GEOPOSITION_GOOGLE_MAPS_API_KEY = 'AIzaSyCrwPhfT-bJKgHwAljbbqpXidITc-Y__ek'$/;"	v
@@ -59,7 +59,7 @@ GeopositionWidget	geoposition/widgets.py	/^class GeopositionWidget(forms.MultiWi
 INSTALLED_APPS	geoposition/tests/settings.py	/^INSTALLED_APPS = ($/;"	v
 INSTALLED_APPS	settings/common.py	/^INSTALLED_APPS = [$/;"	v
 InvalidUsernameValidator	breed/authentication/forms.py	/^def InvalidUsernameValidator(value):$/;"	f
-JERSEY	breed/breeds/models.py	/^JERSEY = "JERSEY"$/;"	v
+jersey	breed/breeds/models.py	/^jersey = "jersey"$/;"	v
 JOB_TITLE	breed/authentication/models.py	/^JOB_TITLE = ($/;"	v
 LANGUAGE_CODE	geoposition/tests/settings.py	/^LANGUAGE_CODE = 'en-us'$/;"	v
 LANGUAGE_CODE	settings/common.py	/^LANGUAGE_CODE = 'en-us'$/;"	v
@@ -99,7 +99,7 @@ Migration	breed/messenger/migrations/0001_initial.py	/^class Migration(migration
 Migration	breed/questions/migrations/0001_initial.py	/^class Migration(migrations.Migration):$/;"	c
 NOTIFICATION_TYPES	breed/activities/models.py	/^    NOTIFICATION_TYPES = ($/;"	v	class:Notification
 Notification	breed/activities/models.py	/^class Notification(models.Model):$/;"	c
-PIG	breed/breeds/models.py	/^PIG = "PIG"$/;"	v
+pig	breed/breeds/models.py	/^pig = "pig"$/;"	v
 Profile	breed/authentication/models.py	/^class Profile(models.Model):$/;"	c
 ProfileForm	breed/core/forms.py	/^class ProfileForm(forms.ModelForm):$/;"	c
 Question	breed/questions/models.py	/^class Question(models.Model):$/;"	c
@@ -145,7 +145,7 @@ THUMBNAIL_ALIASES	settings/common.py	/^THUMBNAIL_ALIASES = {$/;"	v
 TIME_ZONE	geoposition/tests/settings.py	/^TIME_ZONE = 'UTC'$/;"	v
 TIME_ZONE	settings/common.py	/^TIME_ZONE = 'Africa\/Nairobi'$/;"	v
 Tag	breed/questions/models.py	/^class Tag(models.Model):$/;"	c
-UNKNOWN	breed/breeds/models.py	/^UNKNOWN = "UNKNOWN"$/;"	v
+unknown	breed/breeds/models.py	/^unknown = "unknown"$/;"	v
 UP_VOTE	breed/activities/models.py	/^    UP_VOTE = 'U'$/;"	v	class:Activity
 USE_I18N	geoposition/tests/settings.py	/^USE_I18N = True$/;"	v
 USE_I18N	settings/common.py	/^USE_I18N = True$/;"	v
@@ -158,7 +158,7 @@ UniqueEmailValidator	breed/authentication/forms.py	/^def UniqueEmailValidator(va
 UniqueUsernameIgnoreCaseValidator	breed/authentication/forms.py	/^def UniqueUsernameIgnoreCaseValidator(value):$/;"	f
 VERSION	geoposition/__init__.py	/^VERSION = (0, 3, 6)$/;"	v
 WSGI_APPLICATION	settings/common.py	/^WSGI_APPLICATION = 'settings.wsgi.application'$/;"	v
-ZEBU	breed/breeds/models.py	/^ZEBU = "ZEBU"$/;"	v
+zebu	breed/breeds/models.py	/^zebu = "zebu"$/;"	v
 __eq__	geoposition/__init__.py	/^    def __eq__(self, other):$/;"	m	class:Geoposition	file:
 __getattr__	geoposition/conf.py	/^    def __getattr__(self, name):$/;"	m	class:AppSettings	file:
 __init__	breed/authentication/forms.py	/^    def __init__(self, *args, **kwargs):$/;"	m	class:SignUpForm
@@ -190,7 +190,7 @@ activity_type	breed/activities/models.py	/^    activity_type = models.CharField(
 add	breed/breeds/views.py	/^def add(request):$/;"	f
 ajax_required	breed/decorators.py	/^def ajax_required(f):$/;"	f
 all	breed/questions/views.py	/^def all(request):$/;"	f
-animal_type	breed/breeds/models.py	/^    animal_type = models.CharField(max_length=50, choices=ANIMAL_TYPE,default=COW)$/;"	v	class:Breed
+animal_type	breed/breeds/models.py	/^    animal_type = models.CharField(max_length=50, choices=ANIMAL_TYPE,default=cow)$/;"	v	class:Breed
 answer	breed/activities/models.py	/^    answer = models.ForeignKey('questions.Answer', null=True, blank=True, on_delete=models.deletion.CASCADE)$/;"	v	class:Notification
 answer	breed/activities/models.py	/^    answer = models.IntegerField(null=True, blank=True)$/;"	v	class:Activity
 answer	breed/questions/views.py	/^def answer(request):$/;"	f
@@ -202,7 +202,7 @@ breed	breed/activities/models.py	/^    breed = models.ForeignKey('breeds.Breed',
 breed	breed/activities/models.py	/^    breed = models.IntegerField(null=True, blank=True)$/;"	v	class:Activity
 breed	breed/breeds/models.py	/^    breed = models.TextField(max_length=255)$/;"	v	class:Breed
 breed	breed/breeds/views.py	/^def breed(request, pk):$/;"	f
-breed_type	breed/breeds/models.py	/^    breed_type = models.CharField(max_length=50, choices=BREED_TYPE,default=UNKNOWN)$/;"	v	class:Breed
+breed_type	breed/breeds/models.py	/^    breed_type = models.CharField(max_length=50, choices=BREED_TYPE,default=unknown)$/;"	v	class:Breed
 calculate_comments	breed/breeds/models.py	/^    def calculate_comments(self):$/;"	m	class:Breed
 calculate_favorites	breed/questions/models.py	/^    def calculate_favorites(self):$/;"	m	class:Question
 calculate_matches	breed/breeds/models.py	/^    def calculate_matches(self):$/;"	m	class:Breed
@@ -260,11 +260,11 @@ email	breed/core/forms.py	/^    email = forms.CharField($/;"	v	class:ProfileForm
 exclude	breed/authentication/forms.py	/^        exclude = ['last_login', 'date_joined']$/;"	v	class:SignUpForm.Meta
 favorite	breed/questions/views.py	/^def favorite(request):$/;"	f
 favorites	breed/questions/models.py	/^    favorites = models.IntegerField(default=0)$/;"	v	class:Question
-field	breed/breeds/migrations/0002_breed_animal_type.py	/^            field=models.CharField(choices=[('COW', 'Cow'), ('PIG', 'Pig')], default='UNKNOWN', max_length=50),$/;"	v	class:Migration
-field	breed/breeds/migrations/0003_auto_20190430_1213.py	/^            field=models.CharField(choices=[('ANKOLE', 'Ankole'), ('JERSEY', 'Jersey'), ('ZEBU', 'Zebu'), ('FRESIAN', 'Fresian'), ('UNKNOWN', 'Unknown')], default='COW', max_length=50),$/;"	v	class:Migration
+field	breed/breeds/migrations/0002_breed_animal_type.py	/^            field=models.CharField(choices=[('cow', 'cow'), ('pig', 'pig')], default='unknown', max_length=50),$/;"	v	class:Migration
+field	breed/breeds/migrations/0003_auto_20190430_1213.py	/^            field=models.CharField(choices=[('ankole', 'ankole'), ('jersey', 'jersey'), ('zebu', 'zebu'), ('fresian', 'fresian'), ('unknown', 'unknown')], default='cow', max_length=50),$/;"	v	class:Migration
 field	breed/breeds/migrations/0003_auto_20190430_1213.py	/^            field=models.IntegerField(default=100),$/;"	v	class:Migration
-field	breed/breeds/migrations/0004_auto_20190430_1215.py	/^            field=models.CharField(choices=[('ANKOLE', 'Ankole'), ('JERSEY', 'Jersey'), ('ZEBU', 'Zebu'), ('FRESIAN', 'Fresian'), ('UNKNOWN', 'Unknown')], default='UNKNOWN', max_length=50),$/;"	v	class:Migration
-field	breed/breeds/migrations/0004_auto_20190430_1215.py	/^            field=models.CharField(choices=[('COW', 'Cow'), ('PIG', 'Pig')], default='COW', max_length=50),$/;"	v	class:Migration
+field	breed/breeds/migrations/0004_auto_20190430_1215.py	/^            field=models.CharField(choices=[('ankole', 'ankole'), ('jersey', 'jersey'), ('zebu', 'zebu'), ('fresian', 'fresian'), ('unknown', 'unknown')], default='unknown', max_length=50),$/;"	v	class:Migration
+field	breed/breeds/migrations/0004_auto_20190430_1215.py	/^            field=models.CharField(choices=[('cow', 'cow'), ('pig', 'pig')], default='cow', max_length=50),$/;"	v	class:Migration
 field	breed/questions/migrations/0001_initial.py	/^            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='questions.Question'),$/;"	v	class:Migration
 field	breed/questions/migrations/0001_initial.py	/^            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL),$/;"	v	class:Migration
 fields	breed/activities/migrations/0001_initial.py	/^            fields=[$/;"	v	class:Migration

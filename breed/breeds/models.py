@@ -17,31 +17,55 @@ BREED_SEX = (
     (MALE, 'Male'),
     (FEMALE, 'Female'),
     )
-UNKNOWN = "UNKNOWN"
-ANKOLE = "ANKOLE"
-FRESIAN = "FRESIAN"
-JERSEY = "JERSEY"
-ZEBU = "ZEBU"
+unknown = "unknown"
+ankole = "ankole"
+fresian = "fresian"
+jersey = "jersey"
+guernsey="guernsey"
+zebu = "zebu"
+cambra="cambra"
+berkishire="berkishire"
+duroc="duroc"
+hampshire="hampshire"
+kunekune="kunekune"
+landrace="landrace"
+largeblack="largeblack"
+largewhite="largewhite"
+lberian="lberian"
+redhog="redhog"
+saddleback="saddleback"
 BREED_TYPE = (
-    (ANKOLE, 'Ankole'),
-    (JERSEY, 'Jersey'),
-    (ZEBU, 'Zebu'),
-    (FRESIAN, 'Fresian'),
-    (UNKNOWN, 'Unknown'),
+    (ankole, 'ankole'),
+    (jersey, 'jersey'),
+    (zebu, 'zebu'),
+    (fresian, 'fresian'),
+    (unknown, 'unknown'),
+    (guernsey,'guernsey'),
+    (berkishire,'berkishire'),
+    (cambra,'cambra'),
+    (duroc,'duroc'),
+    (hampshire,'hampshire'),
+    (kunekune,'kunekune'),
+    (landrace,'landrace'),
+    (largeblack,'largeblack'),
+    (largewhite,'largewhite'),
+    (lberian,'lberian'),
+    (redhog,'redhog'),
+    (saddleback,'saddleback'),
     )
 
-COW = "COW"
-PIG = "PIG"
+cow = "cow"
+pig = "pig"
 
 ANIMAL_TYPE = (
-    (COW, 'Cow'),
-    (PIG, 'Pig'),
+    (cow, 'cow'),
+    (pig, 'pig'),
     )
 class Breed(models.Model):
     user = models.ForeignKey(User, on_delete=deletion.CASCADE)
     date = models.DateTimeField(auto_now_add=True)
-    animal_type = models.CharField(max_length=50, choices=ANIMAL_TYPE,default=COW)
-    breed_type = models.CharField(max_length=50, choices=BREED_TYPE,default=UNKNOWN)
+    animal_type = models.CharField(max_length=50, choices=ANIMAL_TYPE,default=cow)
+    breed_type = models.CharField(max_length=50, choices=BREED_TYPE,default=unknown)
     breed = models.TextField(max_length=255)
     parent = models.ForeignKey('Breed', null=True, related_name="+", blank=True, on_delete=deletion.CASCADE)
     matches = models.IntegerField(default=0)
@@ -55,7 +79,7 @@ class Breed(models.Model):
     class Meta:
         verbose_name = _('Breed')
         verbose_name_plural = _('Breed')
-        ordering = ('-date',)
+        ordering = ('rating',)
 
     def __str__(self):
         return self.breed

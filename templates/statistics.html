@@ -48,7 +48,7 @@ $(function() {
         data: [
         {% for breed in breeds %}
         {
-            label: "{{ breed.linkfy_breed|safe }}",
+            label: "{{ breed.breed_type}}",
             value: {{ breed.matches }}
         },
         {% endfor %}
@@ -60,32 +60,39 @@ $(function() {
         data: [
         {
             period: '2018 Q1',
-            {% for breed in breeds %}
-            "{{ breed.breed_type }}": {{ breed.matches }},
-            {% endfor %}
+            "ankole": 1,
+            "zebu": 3,
+            "jersey": 5,
+            "fresian": 2,
         },
         {
             period: '2019 Q1',
-            {% for breed in breeds %}
-            "{{ breed.linkfy_breed|safe }}": {{ breed.matches }},
-            {% endfor %}
+            "ankole": 5,
+            "zebu": 7,
+            "jersey": 6,
+            "fresian": 4,
         },
         {
             period: '2020 Q1',
-            {% for breed in breeds %}
-            "{{ breed.linkfy_breed|safe }}": {{ breed.matches }},
-            {% endfor %}
+            "ankole": 7,
+            "zebu": 2,
+            "jersey": 9,
+            "fresian": 6,
         },
         ],
         xkey: 'period',
         ykeys: [
-        {% for breed in breeds %}
-        "{{ breed.breed_type }}",
-        {% endfor %}],
+        "ankole",
+        "zebu",
+        "jersey",
+        "fresian",
+        ],
         labels: [
-        {% for breed in breeds %}
-        "{{ breed.linkfy_breed|safe }}",
-        {% endfor %}],
+        "descrition ankole",
+        "descrition zebu",
+        "descrition jersey",
+        "descrition fresian",
+        ],
         pointSize: 2,
         hideHover: 'auto',
         resize: true

@@ -13,11 +13,11 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='breed',
             name='animal_type',
-            field=models.CharField(choices=[('COW', 'Cow'), ('PIG', 'Pig')], default='COW', max_length=50),
+            field=models.CharField(choices=[('cow', 'cow'), ('pig', 'pig')], default='cow', max_length=50),
         ),
         migrations.AlterField(
             model_name='breed',
             name='breed_type',
-            field=models.CharField(choices=[('ANKOLE', 'Ankole'), ('JERSEY', 'Jersey'), ('ZEBU', 'Zebu'), ('FRESIAN', 'Fresian'), ('UNKNOWN', 'Unknown')], default='UNKNOWN', max_length=50),
+            field=models.CharField(choices=[('ankole', 'ankole'), ('jersey', 'jersey'), ('zebu', 'zebu'), ('fresian', 'fresian'), ('unknown', 'unknown')], default='unknown', max_length=50),
         ),
     ]
