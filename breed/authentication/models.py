@@ -25,7 +25,7 @@ JOB_TITLE = (
 class Profile(models.Model):
 
     user = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=deletion.CASCADE)    
-    location = GeopositionField()
+    location = GeopositionField(default='32.75,0.53')
     job_title = models.CharField(max_length=50, null=True, blank=True, choices=JOB_TITLE)
     
     class Meta:
