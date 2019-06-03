@@ -35,7 +35,10 @@ class Profile(models.Model):
         return self.user.username
 
     def get_location(self):
-        return Geoposition(self.location.latitude,self.location.longitude) 
+    	if self.location:
+	        return Geoposition(self.location.latitude,self.location.longitude) 
+		else:
+			return "32.75,0.53"
 
     def get_picture(self):
         no_picture = '/static/img/user.png'

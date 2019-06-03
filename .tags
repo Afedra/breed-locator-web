@@ -42,7 +42,7 @@ FILE_UPLOAD_PERMISSIONS	settings/common.py	/^FILE_UPLOAD_PERMISSIONS = 0o644$/;"
 FILE_UPLOAD_TEMP_DIR	settings/common.py	/^FILE_UPLOAD_TEMP_DIR = '\/tmp\/'$/;"	v
 ForbiddenUsernamesValidator	breed/authentication/forms.py	/^def ForbiddenUsernamesValidator(value):$/;"	f
 GEOPOSITION_GOOGLE_MAPS_API_KEY	geoposition/tests/settings.py	/^GEOPOSITION_GOOGLE_MAPS_API_KEY = 'DUMMY'$/;"	v
-GEOPOSITION_GOOGLE_MAPS_API_KEY	settings/common.py	/^GEOPOSITION_GOOGLE_MAPS_API_KEY = 'AIzaSyCrwPhfT-bJKgHwAljbbqpXidITc-Y__ek'$/;"	v
+GEOPOSITION_GOOGLE_MAPS_API_KEY	settings/common.py	/^GEOPOSITION_GOOGLE_MAPS_API_KEY = 'AIzaSyBtRJpb2cKEh1B06PQX6D3bxlP61Baw5oA'$/;"	v
 GEOPOSITION_MAP_OPTIONS	settings/common.py	/^GEOPOSITION_MAP_OPTIONS = {$/;"	v
 GEOPOSITION_MAP_WIDGET_HEIGHT	geoposition/tests/settings.py	/^GEOPOSITION_MAP_WIDGET_HEIGHT = 500$/;"	v
 GEOPOSITION_MARKER_OPTIONS	settings/common.py	/^GEOPOSITION_MARKER_OPTIONS = {$/;"	v
@@ -310,7 +310,7 @@ lberian	breed/breeds/models.py	/^lberian="lberian"$/;"	v
 linkfy_breed	breed/breeds/models.py	/^    def linkfy_breed(self):$/;"	m	class:Breed
 load	breed/breeds/views.py	/^def load(request):$/;"	f
 load_new	breed/breeds/views.py	/^def load_new(request):$/;"	f
-location	breed/authentication/models.py	/^    location = GeopositionField()$/;"	v	class:Profile
+location	breed/authentication/models.py	/^    location = GeopositionField(default='32.75,0.53')$/;"	v	class:Profile
 match	breed/breeds/views.py	/^def match(request):$/;"	f
 matches	breed/breeds/models.py	/^    matches = models.IntegerField(default=0)$/;"	v	class:Breed
 max_length	breed/authentication/forms.py	/^        max_length=30)$/;"	v	class:SignUpForm
