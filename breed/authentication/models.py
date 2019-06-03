@@ -25,7 +25,7 @@ JOB_TITLE = (
 class Profile(models.Model):
 
     user = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=deletion.CASCADE)    
-    location = GeopositionField(default='32.75,0.53')
+    location = GeopositionField(default='0.3476,32.5825')
     job_title = models.CharField(max_length=50, null=True, blank=True, choices=JOB_TITLE)
     
     class Meta:
@@ -38,8 +38,8 @@ class Profile(models.Model):
         if self.location:
             return Geoposition(self.location.latitude,self.location.longitude) 
         else:
-            return "32.75,0.53"
-           
+            return "0.3476,32.5825"
+
     def get_picture(self):
         no_picture = '/static/img/user.png'
         try:
