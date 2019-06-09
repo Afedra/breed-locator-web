@@ -21,6 +21,10 @@ if (jQuery != undefined) {
             return;
         }
 
+        function formatDecimal( number, precision ) {
+            return number.toFixed( precision ).replace( /[\.]?0+$/, '' );
+        }
+
         var mapDefaults = {
             'mapTypeId': google.maps.MapTypeId.ROADMAP,
             'scrollwheel': false,
@@ -41,8 +45,8 @@ if (jQuery != undefined) {
                 $searchInput = $('<input>', {'type': 'text', 'placeholder': django.gettext('Input an address...')}),
                 $latitudeField = $container.find('input.geoposition:eq(0)'),
                 $longitudeField = $container.find('input.geoposition:eq(1)'),
-                latitude = parseFloat($latitudeField.val()) || null,
-                longitude = parseFloat($longitudeField.val()) || null,
+                latitude = formatDecimal(parseFloat($latitudeField.val()), 6) || null,
+                longitude = formatDecimal(parseFloat($longitudeField.val()), 6) || null,
                 map,
                 mapLatLng,
                 mapOptions,
@@ -149,8 +153,8 @@ if (jQuery != undefined) {
 
             marker = new google.maps.Marker(markerOptions);
             google.maps.event.addListener(marker, 'dragend', function() {
-                $latitudeField.val(this.position.lat().toFixed(4));
-                $longitudeField.val(this.position.lng().toFixed(4));
+                $latitudeField.val(formatDecimal(this.position.lat(), 6));
+                $longitudeField.val(formatDecimal(this.position.lng(), 6));
                 doGeocode();
             });
             if ($latitudeField.val() && $longitudeField.val()) {
@@ -158,8 +162,8 @@ if (jQuery != undefined) {
             }
 
             $latitudeField.add($longitudeField).bind('keyup', function() {
-                var latitude = parseFloat($latitudeField.val()) || 0;
-                var longitude = parseFloat($longitudeField.val()) || 0;
+                var latitude = parseFloat(formatDecimal($latitudeField.val(), 6)) || 0;
+                var longitude = parseFloat(formatDecimal($longitudeField.val(), 6)) || 0;
                 var center = new google.maps.LatLng(latitude, longitude);
                 map.setCenter(center);
                 map.setZoom(15);

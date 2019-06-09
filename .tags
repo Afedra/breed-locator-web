@@ -314,7 +314,7 @@ is_read	breed/activities/models.py	/^    is_read = models.BooleanField(default=F
 is_read	breed/messenger/models.py	/^    is_read = models.BooleanField(default=False)$/;"	v	class:Message
 jersey	breed/breeds/models.py	/^jersey = "jersey"$/;"	v
 job_title	breed/authentication/forms.py	/^    job_title = forms.ChoiceField($/;"	v	class:SignUpForm
-job_title	breed/authentication/models.py	/^    job_title = models.CharField(max_length=50, null=True, blank=True, choices=JOB_TITLE)$/;"	v	class:Profile
+job_title	breed/authentication/models.py	/^    job_title = models.CharField(max_length=100, null=True, blank=True, choices=JOB_TITLE)$/;"	v	class:Profile
 job_title	breed/core/forms.py	/^    job_title = forms.ChoiceField($/;"	v	class:ProfileForm
 kunekune	breed/breeds/models.py	/^kunekune="kunekune"$/;"	v
 label	breed/authentication/forms.py	/^        label="Confirm your password",$/;"	v	class:SignUpForm
