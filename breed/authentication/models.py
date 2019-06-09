@@ -26,7 +26,7 @@ class Profile(models.Model):
 
     user = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=deletion.CASCADE)    
     location = GeopositionField(default='0.3476,32.5825')
-    job_title = models.CharField(max_length=50, null=True, blank=True, choices=JOB_TITLE)
+    job_title = models.CharField(max_length=100, null=True, blank=True, choices=JOB_TITLE)
     
     class Meta:
         db_table = 'auth_profile'
