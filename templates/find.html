@@ -12,8 +12,34 @@
   <script src="{% static 'js/breeds.js' %}"></script>
   <script>
   $('.rating').rating();
+  $(function () {
+    $.fn.serializeObject = function() {
+        var o = {};
+        var a = this.serializeArray();
+        $.each(a, function() {
+            if (o[this.name]) {
+                if (!o[this.name].push) {
+                    o[this.name] = [o[this.name]];
+                }
+                o[this.name].push(this.value || '');
+            } else {
+                o[this.name] = this.value || '';
+            }
+        });
+        return o;
+    };    
   $('.rating').on('change', function () {
-      
+    $.ajax({
+      url: '/breeds/rating/'+$(this).attr('id')+'/',
+      data: {
+        'rating': $(this).val(),
+        'csrfmiddlewaretoken': '{{ csrf_token }}'
+      },
+      type: 'post',
+      cache: false,
+    });
+
+  });
   });
   </script>
 {% endblock head %}
@@ -35,8 +61,8 @@
               <span class="glyphicon glyphicon-remove remove-breed" title="{% trans 'Click to remove this breed' %}"></span>
             {% endif %}
             <h3><a href="{% url 'profile' breed.user.username %}">{{ breed.user.profile.get_screen_name }}</a> <small>{{ breed.date|naturaltime }}</small></h3>
-            <p>{{ breed.sex }} {{ breed.linkfy_breed|safe }}</p>
-            <input type="hidden" class="rating" value="{{ breed.rating }}" id="{{ breed.id }}"/></p>
+            <p>{{ breed.sex }} {{ breed.linkfy_breed|safe }}
+            <form method="post" action="{% url 'rating' breed.id %}">{% csrf_token %}<input type="hidden" class="rating" value="{{ breed.rating }}" id="{{ breed.id }}" name="rating"/></form></p>
             <div class="col m6">
               <p><img src="{{ breed.photo.url }}" style="max-height:350px;width:100%;"></p>    
             </div>

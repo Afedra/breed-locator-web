@@ -74,6 +74,15 @@ def statistics(request):
     all_breeds = Breed.objects.filter(user=request.user, parent=None)
     return render(request, 'statistics.html', {"breeds": all_breeds, "matches": matches})
 
+@login_required
+@ajax_required
+def rating(request, pk):
+    rating = request.POST['rating']
+    breed = Breed.objects.get(pk=pk)
+    breed.rating = rating
+    breed.save()
+    return HttpResponse()
+
 def find(request, pk):
     breed = get_object_or_404(Breed, pk=pk)
     if breed.sex == "Male":

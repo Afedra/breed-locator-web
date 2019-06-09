@@ -7,6 +7,7 @@ urlpatterns = [
     url(r'^(\d+)/$', views.breed, name='breed'),
     url(r'^(\d+)/find/$', views.find, name='find'),
     url(r'^statistics/$', views.statistics, name='statistics'),
+    url(r'^rating/(\d+)/$', views.rating, name='rating'),
     url(r'^match/$', views.match, name='match'),
     url(r'^comment/$', views.comment, name='comment'),
     url(r'^load/$', views.load, name='load'),
