@@ -310,7 +310,7 @@ lberian	breed/breeds/models.py	/^lberian="lberian"$/;"	v
 linkfy_breed	breed/breeds/models.py	/^    def linkfy_breed(self):$/;"	m	class:Breed
 load	breed/breeds/views.py	/^def load(request):$/;"	f
 load_new	breed/breeds/views.py	/^def load_new(request):$/;"	f
-location	breed/authentication/models.py	/^    location = GeopositionField(default='32.75,0.53')$/;"	v	class:Profile
+location	breed/authentication/models.py	/^    location = GeopositionField(default='0.3476,32.5825')$/;"	v	class:Profile
 match	breed/breeds/views.py	/^def match(request):$/;"	f
 matches	breed/breeds/models.py	/^    matches = models.IntegerField(default=0)$/;"	v	class:Breed
 max_length	breed/authentication/forms.py	/^        max_length=30)$/;"	v	class:SignUpForm
