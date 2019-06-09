@@ -85,6 +85,7 @@ Meta	breed/questions/models.py	/^    class Meta:$/;"	c	class:Question
 Meta	breed/questions/models.py	/^    class Meta:$/;"	c	class:Tag
 Migration	breed/activities/migrations/0001_initial.py	/^class Migration(migrations.Migration):$/;"	c
 Migration	breed/authentication/migrations/0001_initial.py	/^class Migration(migrations.Migration):$/;"	c
+Migration	breed/authentication/migrations/0002_auto_20190609_1353.py	/^class Migration(migrations.Migration):$/;"	c
 Migration	breed/breeds/migrations/0001_initial.py	/^class Migration(migrations.Migration):$/;"	c
 Migration	breed/messenger/migrations/0001_initial.py	/^class Migration(migrations.Migration):$/;"	c
 Migration	breed/questions/migrations/0001_initial.py	/^class Migration(migrations.Migration):$/;"	c
@@ -231,6 +232,7 @@ defaults	geoposition/conf.py	/^    defaults = {$/;"	v	class:AppSettings
 delete	breed/messenger/views.py	/^def delete(request):$/;"	f
 dependencies	breed/activities/migrations/0001_initial.py	/^    dependencies = [$/;"	v	class:Migration
 dependencies	breed/authentication/migrations/0001_initial.py	/^    dependencies = [$/;"	v	class:Migration
+dependencies	breed/authentication/migrations/0002_auto_20190609_1353.py	/^    dependencies = [$/;"	v	class:Migration
 dependencies	breed/breeds/migrations/0001_initial.py	/^    dependencies = [$/;"	v	class:Migration
 dependencies	breed/messenger/migrations/0001_initial.py	/^    dependencies = [$/;"	v	class:Migration
 dependencies	breed/questions/migrations/0001_initial.py	/^    dependencies = [$/;"	v	class:Migration
@@ -245,6 +247,7 @@ email	breed/core/forms.py	/^    email = forms.CharField($/;"	v	class:ProfileForm
 exclude	breed/authentication/forms.py	/^        exclude = ['last_login', 'date_joined']$/;"	v	class:SignUpForm.Meta
 favorite	breed/questions/views.py	/^def favorite(request):$/;"	f
 favorites	breed/questions/models.py	/^    favorites = models.IntegerField(default=0)$/;"	v	class:Question
+field	breed/authentication/migrations/0002_auto_20190609_1353.py	/^            field=models.CharField(blank=True, choices=[('FARMER', 'Farmer'), ('DOCTOR', 'Doctor')], max_length=100, null=True),$/;"	v	class:Migration
 field	breed/questions/migrations/0001_initial.py	/^            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='questions.Question'),$/;"	v	class:Migration
 field	breed/questions/migrations/0001_initial.py	/^            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL),$/;"	v	class:Migration
 fields	breed/activities/migrations/0001_initial.py	/^            fields=[$/;"	v	class:Migration
@@ -333,7 +336,7 @@ lberian	breed/breeds/models.py	/^lberian="lberian"$/;"	v
 linkfy_breed	breed/breeds/models.py	/^    def linkfy_breed(self):$/;"	m	class:Breed
 load	breed/breeds/views.py	/^def load(request):$/;"	f
 load_new	breed/breeds/views.py	/^def load_new(request):$/;"	f
-location	breed/authentication/models.py	/^    location = GeopositionField(default='0.3476,32.5825')$/;"	v	class:Profile
+location	breed/authentication/models.py	/^    location = GeopositionField(default='Decimal(0.3476),Decimal(32.5825)')$/;"	v	class:Profile
 match	breed/breeds/views.py	/^def match(request):$/;"	f
 matches	breed/breeds/models.py	/^    matches = models.IntegerField(default=0)$/;"	v	class:Breed
 max_length	breed/authentication/forms.py	/^        max_length=30)$/;"	v	class:SignUpForm
@@ -353,10 +356,12 @@ model	breed/core/forms.py	/^        model = Profile$/;"	v	class:ProfileForm.Meta
 model	breed/core/forms.py	/^        model = User$/;"	v	class:ChangePasswordForm.Meta
 model	breed/questions/forms.py	/^        model = Answer$/;"	v	class:AnswerForm.Meta
 model	breed/questions/forms.py	/^        model = Question$/;"	v	class:QuestionForm.Meta
+model_name	breed/authentication/migrations/0002_auto_20190609_1353.py	/^            model_name='profile',$/;"	v	class:Migration
 model_name	breed/questions/migrations/0001_initial.py	/^            model_name='answer',$/;"	v	class:Migration
 name	breed/activities/migrations/0001_initial.py	/^            name='Activity',$/;"	v	class:Migration
 name	breed/activities/migrations/0001_initial.py	/^            name='Notification',$/;"	v	class:Migration
 name	breed/authentication/migrations/0001_initial.py	/^            name='Profile',$/;"	v	class:Migration
+name	breed/authentication/migrations/0002_auto_20190609_1353.py	/^            name='job_title',$/;"	v	class:Migration
 name	breed/breeds/migrations/0001_initial.py	/^            name='Breed',$/;"	v	class:Migration
 name	breed/messenger/migrations/0001_initial.py	/^            name='Message',$/;"	v	class:Migration
 name	breed/questions/migrations/0001_initial.py	/^            name='Answer',$/;"	v	class:Migration
@@ -386,6 +391,7 @@ notify_matched	breed/authentication/models.py	/^    def notify_matched(self, bre
 old_password	breed/core/forms.py	/^    old_password = forms.CharField($/;"	v	class:ChangePasswordForm
 operations	breed/activities/migrations/0001_initial.py	/^    operations = [$/;"	v	class:Migration
 operations	breed/authentication/migrations/0001_initial.py	/^    operations = [$/;"	v	class:Migration
+operations	breed/authentication/migrations/0002_auto_20190609_1353.py	/^    operations = [$/;"	v	class:Migration
 operations	breed/breeds/migrations/0001_initial.py	/^    operations = [$/;"	v	class:Migration
 operations	breed/messenger/migrations/0001_initial.py	/^    operations = [$/;"	v	class:Migration
 operations	breed/questions/migrations/0001_initial.py	/^    operations = [$/;"	v	class:Migration
