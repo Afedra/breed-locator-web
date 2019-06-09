@@ -422,6 +422,7 @@ question	breed/questions/models.py	/^    question = models.ForeignKey(Question, 
 question	breed/questions/views.py	/^def question(request, pk):$/;"	f
 questions	breed/questions/views.py	/^def questions(request):$/;"	f
 rating	breed/breeds/models.py	/^    rating = models.IntegerField(default=0)$/;"	v	class:Breed
+rating	breed/breeds/views.py	/^def rating(request, pk):$/;"	f
 redhog	breed/breeds/models.py	/^redhog="redhog"$/;"	v
 remove	breed/breeds/views.py	/^def remove(request):$/;"	f
 required	breed/authentication/forms.py	/^        required=True)  $/;"	v	class:SignUpForm

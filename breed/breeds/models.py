@@ -79,7 +79,7 @@ class Breed(models.Model):
     class Meta:
         verbose_name = _('Breed')
         verbose_name_plural = _('Breed')
-        ordering = ('rating',)
+        ordering = ('-rating',)
 
     def __str__(self):
         return self.breed
