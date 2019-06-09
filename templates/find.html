@@ -10,6 +10,12 @@
   <link href="{% static 'css/breeds.css' %}" rel="stylesheet">
   <script src="{% static 'js/jquery.bullseye-1.0-min.js' %}"></script>
   <script src="{% static 'js/breeds.js' %}"></script>
+  <script>
+  $('.rating').rating();
+  $('.rating').on('change', function () {
+      
+  });
+  </script>
 {% endblock head %}
 
 {% block main %}
@@ -30,6 +36,7 @@
             {% endif %}
             <h3><a href="{% url 'profile' breed.user.username %}">{{ breed.user.profile.get_screen_name }}</a> <small>{{ breed.date|naturaltime }}</small></h3>
             <p>{{ breed.sex }} {{ breed.linkfy_breed|safe }}</p>
+            <input type="hidden" class="rating" value="{{ breed.rating }}" id="{{ breed.id }}"/></p>
             <div class="col m6">
               <p><img src="{{ breed.photo.url }}" style="max-height:350px;width:100%;"></p>    
             </div>

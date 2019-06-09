@@ -10,7 +10,7 @@
         </button>
       {% endif %}
       <h3><a href="{% url 'profile' breed.user.username %}">{{ breed.user.profile.get_screen_name }}</a> <small>{{ breed.date|naturaltime }}</small></h3>
-      <p><div class="chip">{{ breed.sex }}</div> <div class="chip">{{ breed.breed_type }}</div><div class="chip">{{ breed.animal_type }}</div><br>{{ breed.linkfy_breed|safe }}</p>
+      <p><div class="chip">{{ breed.sex }}</div> <div class="chip">{{ breed.breed_type }}</div><div class="chip">{{ breed.animal_type }}</div><br>{{ breed.linkfy_breed|safe }}<input type="hidden" class="rating" value="{{ breed.rating }}" data-readonly/></p>
       <div class="col m6">
         <p><img src="{{ breed.photo.url }}" style="max-height:350px;width:100%;"></p>    
       </div>
@@ -39,7 +39,6 @@
         <a href="{% url 'breed' breed.id %}" class="pull-right">
           <span class="text">View</span>
         </a>
-        <input type="hidden" class="rating"/>
 
       </div>
       <div class="comments">

@@ -7,8 +7,6 @@
 {% block title %} {% trans 'Breed' %} {% endblock %}
 
 {% block head %}
-  <link href="{% static 'css/bootstrap-rating.css' %}" rel="stylesheet">
-  <script src="{% static 'js/bootstrap-rating.min.js' %}"></script>
   <link href="{% static 'css/breeds.css' %}" rel="stylesheet">
   <script src="{% static 'js/jquery.bullseye-1.0-min.js' %}"></script>
   <script src="{% static 'js/breeds.js' %}"></script>
@@ -38,7 +36,7 @@
               <span class="glyphicon glyphicon-remove remove-breed" title="{% trans 'Click to remove this breed' %}"></span>
             {% endif %}
             <h3><a href="{% url 'profile' breeds.user.username %}">{{ breeds.user.profile.get_screen_name }}</a> <small>{{ breeds.date|naturaltime }}</small></h3>
-            <p>{{ breeds.sex }} {{ breeds.linkfy_breed|safe }}</p>
+            <p>{{ breeds.sex }} {{ breeds.linkfy_breed|safe }} <input type="hidden" class="rating" value="{{ breed.rating }}" data-readonly/></p>
             <div class="col m6">
               <p><img src="{{ breeds.photo.url }}" style="max-height:350px;width:100%;"></p>    
             </div>
